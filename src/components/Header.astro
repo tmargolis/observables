@@ -1,0 +1,42 @@
+---
+---
+
+<nav class="fixed top-0 w-full z-40 p-6 flex justify-between items-center glass mix-blend-difference text-gray-300">
+  <!-- Left Side -->
+  <div class="flex items-center gap-8">
+    <a href="/" class="font-serif text-2xl tracking-tight text-white hover:text-glow transition-all duration-300">
+      OBSERVABLES
+    </a>
+    <div class="hidden md:flex gap-6 font-mono text-xs tracking-[0.2em] uppercase">
+      <a href="/" class="hover:text-white hover:text-glow transition-all duration-300">Home</a>
+      <a href="/narrative" class="hover:text-white hover:text-glow transition-all duration-300">Narrative</a>
+      <a href="/works" class="hover:text-white hover:text-glow transition-all duration-300">Works</a>
+    </div>
+  </div>
+
+  <!-- Right Side -->
+  <div class="flex items-center gap-6 font-mono text-xs tracking-[0.2em] uppercase">
+    <a href="/walkthrough" class="hover:text-white hover:text-glow transition-all duration-300">Walkthrough</a>
+    <a href="/logistics" id="nav-logistics" class="hidden hover:text-white hover:text-glow transition-all duration-300">Logistics</a>
+  </div>
+</nav>
+
+<script>
+  // Check Clerk auth status to show Logistics link
+  window.addEventListener("load", async function () {
+    const checkClerk = setInterval(async () => {
+      // @ts-ignore
+      if (window.Clerk) {
+        clearInterval(checkClerk);
+        // @ts-ignore
+        await window.Clerk.load();
+        
+        // @ts-ignore
+        if (window.Clerk.user) {
+          const logisticsLink = document.getElementById('nav-logistics');
+          if (logisticsLink) logisticsLink.classList.remove('hidden');
+        }
+      }
+    }, 100);
+  });
+</script>

@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Artist Bio">
+  <section class="min-h-screen pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
+      
+      <!-- Text (Left) -->
+      <div class="flex-1 order-2 md:order-1">
+          <h1 class="font-serif text-5xl md:text-6xl mb-8 italic">The Artist</h1>
+          <div class="font-mono text-sm text-gray-300 space-y-6 leading-relaxed text-justify">
+              <p>
+                  My practice is an ongoing investigation into the imperceptible. By translating data from astronomical observatories into physical forms, I attempt to bridge the gap between the human scale and the cosmic scale.
+              </p>
+              <p>
+                  With a background in computational physics and sculpture, I use code as a material and light as a structural element. The resulting works are not merely representations of scientific phenomena, but experiential simulations that invite the viewer to question their own position in the universe.
+              </p>
+              <p>
+                  My work has been exhibited internationally and is held in private collections across Europe and North America.
+              </p>
+
+              <div class="pt-8 mt-8 border-t border-white/10">
+                  <a href="https://toddmargolis.net" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-mono text-xs text-indigo-400 hover:text-white uppercase tracking-widest transition-colors">
+                      Visit Main Portfolio (toddmargolis.net) 
+                      <span>&nearr;</span>
+                  </a>
+              </div>
+          </div>
+      </div>
+
+      <!-- Portrait (Right) -->
+      <div class="flex-1 order-1 md:order-2 w-full">
+          <div class="aspect-[3/4] bg-gray-800 relative overflow-hidden">
+              <div class="absolute inset-0 bg-indigo-900/20 mix-blend-overlay z-10"></div>
+              <!-- Placeholder Portrait -->
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2000&auto=format&fit=crop" alt="Portrait" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+          </div>
+      </div>
+
+  </section>
+</Layout>

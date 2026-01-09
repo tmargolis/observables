@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Logistics & Technical Requirements">
+  <section class="min-h-screen py-32 px-6 md:px-12 max-w-4xl mx-auto text-center">
+    
+    <!-- Loading State -->
+    <div id="auth-loading" class="font-mono text-xs text-indigo-400 animate-pulse">
+      Verifying Credentials...
+    </div>
+
+    <!-- Protected Content -->
+    <div id="protected-content" class="hidden text-left animate-in fade-in duration-700">
+        <div class="inline-block border border-green-900/50 bg-green-900/10 text-green-400 font-mono text-[10px] px-3 py-1 mb-8 uppercase tracking-widest mx-auto block w-fit">
+            Authenticated: Institutional Access granted
+        </div>
+        
+        <h1 class="font-serif text-4xl md:text-6xl mb-12 text-center">Logistics & Installation</h1>
+        
+        <div class="space-y-12 font-mono text-sm text-gray-400">
+            <div>
+                <h3 class="text-white text-lg mb-4 border-b border-white/10 pb-2">01. Technical Riders</h3>
+                <p>All works require independent 15A circuits. Access to localized dimming control is mandatory for the "Horizon Event" projection.</p>
+                <ul class="list-disc list-inside mt-4 space-y-2 text-xs text-gray-500">
+                    <li>Power: 110V/220V compatible</li>
+                    <li>Networking: Local LAN for controller sync</li>
+                    <li>Spacing: Minimum 2m clearance for sensor activation</li>
+                </ul>
+            </div>
+
+            <div>
+                 <h3 class="text-white text-lg mb-4 border-b border-white/10 pb-2">02. Shipping & Crate Dimensions</h3>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white/5 p-4">
+                        <span class="block text-white mb-2">Crate A (Nebulae Core)</span>
+                        <span>50x50x20cm | 18kg</span>
+                    </div>
+                    <div class="bg-white/5 p-4">
+                        <span class="block text-white mb-2">Crate B (Tectonic Drift)</span>
+                        <span>210x110x30cm | 65kg</span>
+                    </div>
+                 </div>
+            </div>
+
+             <div class="pt-12 text-center">
+                 <a href="mailto:studio@observables.art" class="border border-white/20 px-8 py-3 text-white hover:bg-white hover:text-black transition-colors uppercase tracking-widest text-xs">
+                     Download Full Technical PDF
+                 </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Access Denied / Login Prompt -->
+    <div id="access-denied" class="hidden">
+        <h2 class="font-serif text-3xl mb-6">Restricted Access</h2>
+        <p class="font-mono text-sm text-gray-500 mb-8 max-w-md mx-auto">
+            This section contains sensitive technical specifications and is reserved for curators and institutional partners.
+        </p>
+        <button onclick="window.Clerk.openSignIn()" class="bg-white text-black font-mono text-xs px-8 py-3 uppercase tracking-widest hover:bg-gray-300 transition-colors">
+            Login to View
+        </button>
+    </div>
+
+  </section>
+</Layout>
+
+<script>
+    window.addEventListener("load", async function () {
+        const checkClerk = setInterval(async () => {
+             // @ts-ignore
+            if (window.Clerk) {
+                clearInterval(checkClerk);
+                 // @ts-ignore
+                await window.Clerk.load();
+                
+                const loading = document.getElementById('auth-loading');
+                const content = document.getElementById('protected-content');
+                const denied = document.getElementById('access-denied');
+                
+                if (loading) loading.classList.add('hidden');
+
+                 // @ts-ignore
+                if (window.Clerk.user) {
+                    if (content) content.classList.remove('hidden');
+                } else {
+                    if (denied) denied.classList.remove('hidden');
+                }
+            }
+        }, 100);
+    });
+</script>
