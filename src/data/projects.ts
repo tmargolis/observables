@@ -64,13 +64,13 @@ export const projects: Project[] = [
     weight: 'Variable',
     note: 'Series of 3 Works',
     isSeries: true,
-    heroImage: 'https://images.unsplash.com/photo-1614730341194-75c60740a073?q=80&w=2187&auto=format&fit=crop',
+    heroImage: '/images/delayed-vision-hero.jpg',
     quote: 'Light is a fossil of time.',
     description: 'A series of video mirrors that introduce a precise delay to the viewer\'s reflection, corresponding to the light-travel time from various celestial bodies. We never see the present; we only see the past.',
     description2: 'The series includes "The Moon" (1.3 seconds delay), "The Sun" (8 minutes, 20 seconds delay), and "Saturn" (approx. 79 minutes delay), forcing the viewer to confront the latency of the universe.',
     images: [
-      'https://images.unsplash.com/photo-1614730341194-75c60740a073?q=80&w=2187&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=2068&auto=format&fit=crop'
+      '/images/delayed-vision-hero.jpg',
+      '/images/delayed-vision-2.jpg'
     ]
   },
   // 4. Star Trails
@@ -172,7 +172,7 @@ export const projects: Project[] = [
       '/images/California nebula (1).jpg'
     ]
   },
-  // 9. Sculpture
+  // 9. Sculpture (Placeholder)
   {
     slug: 'sculpture',
     title: 'Work 09: Sculpture Series',
@@ -182,13 +182,13 @@ export const projects: Project[] = [
     weight: 'Variable',
     note: 'Physical Reliefs',
     isSeries: true,
-    heroImage: 'https://images.unsplash.com/photo-1614728853970-386052607f1b?q=80&w=2187&auto=format&fit=crop',
+    heroImage: '/images/sculpture-hero.jpg',
     quote: 'Tactile astronomy.',
     description: 'A series of cast molds created from topographic data of cosmic objects. This project translates remote sensing data into tangible objects, allowing the viewer to touch the craters of the Moon, the surface of Mars, and the event horizon of a black hole.',
     description2: 'Includes reliefs of The Moon, Mars, The Milky Way structure, and Solar Flares.',
     images: [
-      'https://images.unsplash.com/photo-1614728853970-386052607f1b?q=80&w=2187&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1614314107768-6018061b5b72?q=80&w=2187&auto=format&fit=crop'
+      '/images/sculpture-hero.jpg',
+      '/images/sculpture-2.jpg'
     ]
   },
   // 10. CMB VR
@@ -209,7 +209,7 @@ export const projects: Project[] = [
       'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'
     ]
   },
-  // 11. Redshifter
+  // 11. Redshifter (Placeholder)
   {
     slug: 'redshifter',
     title: 'Work 11: Redshifter',
