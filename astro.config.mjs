@@ -8,6 +8,7 @@ export default defineConfig({
   site: 'https://observables.art', // Your custom domain
   base: '/',                       // Leave as '/' since you use a custom domain
   outDir: 'dist',
+  output: 'static',
   vite: {
     plugins: [tailwindcss()]
   }
