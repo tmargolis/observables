@@ -1,4 +1,10 @@
 ---
+interface Props {
+  prevProject?: { title: string; slug: string };
+  nextProject?: { title: string; slug: string };
+}
+
+const { prevProject, nextProject } = Astro.props;
 ---
 
 <nav class="fixed top-0 w-full z-40 p-6 flex justify-between items-center glass mix-blend-difference text-gray-300">
@@ -14,8 +20,29 @@
     </div>
   </div>
 
+  <!-- Center (Project Nav) -->
+  {prevProject && nextProject && (
+    <div class="hidden lg:flex gap-8 font-mono text-xs tracking-[0.2em] uppercase absolute left-1/2 transform -translate-x-1/2">
+       <a href={`/works/${prevProject.slug}/`} class="hover:text-white hover:text-glow transition-all duration-300 group">
+          &larr; <span class="hidden xl:inline">{prevProject.title}</span>
+       </a>
+       <span class="text-white/20">|</span>
+       <a href={`/works/${nextProject.slug}/`} class="hover:text-white hover:text-glow transition-all duration-300 group">
+          <span class="hidden xl:inline">{nextProject.title}</span> &rarr;
+       </a>
+    </div>
+  )}
+
   <!-- Right Side -->
   <div class="flex items-center gap-6 font-mono text-xs tracking-[0.2em] uppercase">
+    <!-- Mobile/Tablet Project Nav (Simplified) -->
+    {prevProject && nextProject && (
+      <div class="flex lg:hidden gap-4 mr-4 border-r border-white/20 pr-4">
+         <a href={`/works/${prevProject.slug}/`} class="hover:text-white">&larr;</a>
+         <a href={`/works/${nextProject.slug}/`} class="hover:text-white">&rarr;</a>
+      </div>
+    )}
+
     <a href="/walkthrough/" class="hover:text-white hover:text-glow transition-all duration-300">Walkthrough</a>
     <a href="/logistics/" id="nav-logistics" class="hidden hover:text-white hover:text-glow transition-all duration-300">Logistics</a>
   </div>
