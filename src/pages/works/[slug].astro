@@ -22,6 +22,9 @@ const nextProject = projects[currentIndex + 1] || projects[0];
     <div class="absolute inset-0 bg-black/40 z-10"></div>
     <img src={project.heroImage} alt={project.title} class="w-full h-full object-cover" />
     <div class="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-12 pb-24">
+      {project.isSeries && (
+        <span class="font-mono text-xs text-indigo-400 tracking-widest uppercase mb-2 block">Series Collection</span>
+      )}
       <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-4">{project.title}</h1>
       <p class="font-serif text-xl md:text-2xl text-gray-300 italic max-w-2xl">"{project.quote}"</p>
     </div>
@@ -30,38 +33,91 @@ const nextProject = projects[currentIndex + 1] || projects[0];
   <!-- Content Grid -->
   <div class="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 grid grid-cols-1 md:grid-cols-12 gap-12 relative">
     
-    <!-- Left Col: Carousel/Images -->
+    <!-- Left Col: Content -->
     <div class="md:col-span-8 space-y-24">
       
-      <!-- Carousel (Simple Scroll Snap) -->
-      <div class="relative w-full aspect-video bg-gray-900 overflow-x-auto snap-x snap-mandatory flex hide-scrollbar">
-        {project.images.map(img => (
-          <img src={img} class="w-full h-full object-cover flex-shrink-0 snap-center" alt="Detail view" />
-        ))}
-      </div>
+      <!-- Series Handling: Alternating layout just like Standard View -->
+      {project.isSeries ? (
+        <div class="space-y-24">
+          <!-- Intro Text -->
+          <div class="font-mono text-sm text-gray-300 leading-relaxed text-justify border-l border-white/20 pl-6">
+             <p>{project.description}</p>
+             <p class="mt-4">{project.description2}</p>
+          </div>
 
-      <!-- Alternating Section -->
-      <div class="space-y-24">
-        <!-- Block 1: Text Left, Image Right (if any) -->
-        <div class="flex flex-col md:flex-row gap-8 items-center">
-            <div class="flex-1 font-mono text-sm text-gray-300 leading-relaxed text-justify">
-               <p>{project.description}</p>
-            </div>
-            <div class="flex-1">
-               {project.images[1] && <img src={project.images[1]} class="w-full grayscale hover:grayscale-0 transition-all duration-500" alt="Detail" />}
-            </div>
+          <!-- Loop through all series images in alternating layout -->
+          {project.images.map((img, i) => (
+             i % 2 === 0 ? (
+               /* Even Index: Text Left (if any metadata), Image Right */
+               <div class="flex flex-col md:flex-row gap-8 items-center">
+                   <div class="flex-1 font-mono text-sm text-gray-400 leading-relaxed text-right md:text-right w-full">
+                      <span class="block text-white mb-2 uppercase tracking-widest">Variation {i+1}</span>
+                      <p>Archival pigment print on cotton rag.</p>
+                   </div>
+                   <div class="flex-1 w-full">
+                      <img src={img} class="w-full grayscale hover:grayscale-0 transition-all duration-500" alt={`Series Variation ${i+1}`} />
+                   </div>
+               </div>
+             ) : (
+               /* Odd Index: Image Left, Text Right */
+               <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+                    <div class="flex-1 font-mono text-sm text-gray-400 leading-relaxed text-left w-full">
+                      <span class="block text-white mb-2 uppercase tracking-widest">Variation {i+1}</span>
+                      <p>Archival pigment print on cotton rag.</p>
+                   </div>
+                   <div class="flex-1 w-full">
+                      <img src={img} class="w-full grayscale hover:grayscale-0 transition-all duration-500" alt={`Series Variation ${i+1}`} />
+                   </div>
+               </div>
+             )
+          ))}
         </div>
+      ) : (
+        /* Standard Single Work Layout */
+        <>
+          <div class="relative w-full aspect-video bg-gray-900 overflow-x-auto snap-x snap-mandatory flex hide-scrollbar items-center justify-center">
+             {/* Check if Video Exists for Main Display */}
+             {project.videos && project.videos.length > 0 ? (
+                <video 
+                   class="w-full h-full object-cover" 
+                   autoplay 
+                   loop 
+                   muted 
+                   playsinline
+                   controls
+                >
+                   <source src={project.videos[0]} type="video/mp4" />
+                   Your browser does not support the video tag.
+                </video>
+             ) : (
+                /* Fallback to Image Carousel */
+                project.images.map(img => (
+                  <img src={img} class="w-full h-full object-cover flex-shrink-0 snap-center" alt="Detail view" />
+                ))
+             )}
+          </div>
 
-        <!-- Block 2: Image Left, Text Right -->
-        <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
-             <div class="flex-1 font-mono text-sm text-gray-300 leading-relaxed text-justify">
-               <p>{project.description2}</p>
+          <div class="space-y-24">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="flex-1 font-mono text-sm text-gray-300 leading-relaxed text-justify">
+                   <p>{project.description}</p>
+                </div>
+                <div class="flex-1">
+                   {project.images[1] && <img src={project.images[1]} class="w-full grayscale hover:grayscale-0 transition-all duration-500" alt="Detail" /> || <img src={project.images[0]} class="w-full grayscale hover:grayscale-0 transition-all duration-500" alt="Detail" />}
+                </div>
             </div>
-            <div class="flex-1">
-               <img src={project.heroImage} class="w-full grayscale hover:grayscale-0 transition-all duration-500" alt="Detail" />
+
+            <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+                 <div class="flex-1 font-mono text-sm text-gray-300 leading-relaxed text-justify">
+                   <p>{project.description2}</p>
+                </div>
+                <div class="flex-1">
+                   <img src={project.heroImage} class="w-full grayscale hover:grayscale-0 transition-all duration-500" alt="Detail" />
+                </div>
             </div>
-        </div>
-      </div>
+          </div>
+        </>
+      )}
 
     </div>
 
@@ -96,10 +152,10 @@ const nextProject = projects[currentIndex + 1] || projects[0];
 
   <!-- Project Navigation -->
   <div class="max-w-7xl mx-auto px-6 md:px-12 pb-12 flex justify-between font-mono text-xs uppercase tracking-widest text-gray-500 border-t border-white/10 pt-8">
-    <a href={`/works/${prevProject.slug}`} class="hover:text-white transition-colors group">
+    <a href={`/works/${prevProject.slug}/`} class="hover:text-white transition-colors group">
       &larr; <span class="group-hover:translate-x-1 transition-transform inline-block">{prevProject.title}</span>
     </a>
-    <a href={`/works/${nextProject.slug}`} class="hover:text-white transition-colors group">
+    <a href={`/works/${nextProject.slug}/`} class="hover:text-white transition-colors group">
       <span class="group-hover:-translate-x-1 transition-transform inline-block">{nextProject.title}</span> &rarr;
     </a>
   </div>
@@ -112,7 +168,7 @@ const nextProject = projects[currentIndex + 1] || projects[0];
         <p class="font-mono text-sm text-gray-400 mb-8 leading-relaxed">
           The artist explores the boundaries between digital precision and organic chaos. Through a rigorous process of simulation and fabrication, they bring the invisible forces of the cosmos into tangible form.
         </p>
-        <a href="/bio" class="inline-block border border-white/20 px-6 py-3 font-mono text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
+        <a href="/bio/" class="inline-block border border-white/20 px-6 py-3 font-mono text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
           Learn More
         </a>
       </div>
@@ -124,7 +180,7 @@ const nextProject = projects[currentIndex + 1] || projects[0];
   </section>
 
   <!-- Fixed Inquiry Button -->
-  <a href="/contact" class="fixed bottom-8 right-8 z-50 bg-white text-black font-mono text-xs px-6 py-3 uppercase tracking-widest hover:bg-indigo-500 hover:text-white transition-all duration-300 shadow-lg shadow-indigo-500/20">
+  <a href="/contact/" class="fixed bottom-8 right-8 z-50 bg-white text-black font-mono text-xs px-6 py-3 uppercase tracking-widest hover:bg-indigo-500 hover:text-white transition-all duration-300 shadow-lg shadow-indigo-500/20">
       Inquire about this artwork
   </a>
 
