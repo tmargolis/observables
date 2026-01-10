@@ -15,6 +15,8 @@ export interface Project {
   videos?: string[];
   isSeries?: boolean;
   imageTitles?: string[];
+  contextImage?: string;
+  contextCaption?: string;
 }
 
 export const projects: Project[] = [
@@ -55,7 +57,7 @@ export const projects: Project[] = [
     description2: 'Based on Einstein’s theory of general relativity, the piece demonstrates how gravity overpowers molecular cohesion, elongating form into a long, thin strand just before it vanishes into the singularity.',
     images: [
       '/images/Spaghettification.jpg',
-      'https://images.unsplash.com/photo-1506318137071-a8bcbf6d0b36?q=80&w=2070&auto=format&fit=crop'
+      '/images/black-hole-vision-2.jpg'
     ]
   },
   // 3. Delayed Vision
@@ -69,17 +71,19 @@ export const projects: Project[] = [
     price: 'Inquire for Series',
     note: 'Series of 3 Works',
     isSeries: true,
-    heroImage: '/images/delayed-vision-hero.jpg',
+    heroImage: '/images/Sun_Previs-1.png', // Using Sun as hero
     quote: 'Light is a fossil of time.',
     description: 'A series of video mirrors that introduce a precise delay to the viewer\'s reflection, corresponding to the light-travel time from various celestial bodies. We never see the present; we only see the past.',
     description2: 'The series includes "The Moon" (1.3 seconds delay), "The Sun" (8 minutes, 20 seconds delay), and "Saturn" (approx. 79 minutes delay), forcing the viewer to confront the latency of the universe.',
     images: [
-      '/images/delayed-vision-hero.jpg',
-      '/images/delayed-vision-2.jpg'
+      '/images/Moon_Previs-1.png',
+      '/images/Sun_Previs-1.png',
+      '/images/Saturn_Previs-1.png'
     ],
     imageTitles: [
-        'Installation View',
-        'Detail View'
+        'The Moon (1.3s delay)',
+        'The Sun (8m 20s delay)',
+        'Saturn (79m delay)'
     ]
   },
   // 4. Star Trails
@@ -120,13 +124,30 @@ export const projects: Project[] = [
     weight: '0.5kg',
     price: '$1,000.00',
     note: 'Interactive Object',
-    heroImage: '/images/View-Master.jpg',
+    isSeries: true,
+    heroImage: '/images/View-Master-Previs2.png',
     quote: 'Stereoscopic depth in the void.',
     description: 'A custom View-Master experience presenting 7 stereoscopic images of our solar system. By utilizing parallax data from spacecraft and rotational shifts, these reels provide true 3D views of celestial objects.',
     description2: 'Features the icy mountains of Pluto (New Horizons data), the craters of Phobos (Mars Express), and Solar Coronal Mass Ejections (STEREO satellites).',
+    contextImage: '/images/View-Master-Previs2.png',
+    contextCaption: 'View-Master Reel',
     images: [
-      '/images/View-Master.jpg',
-      '/images/view-master-detail.jpg'
+      '/images/Pluto-Previs_1.jpg',
+      '/images/Pluto_Previs_2.png',
+      '/images/Phobos-Previs_1.jpg',
+      '/images/Sun.jpg',
+      '/images/Asteroids.jpeg',
+      '/images/Proxima_Previs1.jpeg',
+      '/images/moon.gif'
+    ],
+    imageTitles: [
+        'Pluto',
+        'Pluto (Detail)',
+        'Phobos',
+        'The Sun',
+        'Asteroids',
+        'Proxima Centauri',
+        'The Moon (Stereo)'
     ]
   },
   // 6. Audio Counter
@@ -210,17 +231,25 @@ export const projects: Project[] = [
     weight: 'Variable',
     note: 'Physical Reliefs',
     isSeries: true,
-    heroImage: '/images/sculpture-hero.jpg',
+    heroImage: '/images/Spheroids-Previs1.png', 
     quote: 'Tactile astronomy.',
     description: 'A series of cast molds created from topographic data of cosmic objects. This project translates remote sensing data into tangible objects, allowing the viewer to touch the craters of the Moon, the surface of Mars, and the event horizon of a black hole.',
     description2: 'Includes reliefs of The Moon, Mars, The Milky Way structure, and Solar Flares.',
+    contextImage: '/images/Flats-Previs_1.png', 
+    contextCaption: 'Milky Way and Black Hole',
     images: [
-      '/images/sculpture-hero.jpg',
-      '/images/sculpture-2.jpg'
+      '/images/Mars-Previs_1..png',
+      '/images/MilkyWay-Previs_1.png',
+      '/images/Moon-Previs_1.png',
+      '/images/Sun-Previs_1.png',
+      '/images/BlackHole-Previs_1.png'
     ],
     imageTitles: [
-        'Moon Surface',
-        'Crater Detail'
+        'Mars',
+        'Milky Way',
+        'Moon',
+        'Sun',
+        'Black Hole'
     ]
   },
   // 10. CMB VR
@@ -252,12 +281,12 @@ export const projects: Project[] = [
     weight: 'N/A',
     price: '$10,000.00',
     note: 'Lighting Environment',
-    heroImage: 'https://images.unsplash.com/photo-1484589065579-248aad0d8b13?q=80&w=1959&auto=format&fit=crop',
+    heroImage: '/images/Redshifter.png',
     quote: 'The color of velocity.',
     description: 'An immersive room installation that simulates the Redshift effect. As viewers move through the space, the lighting shifts spectrum, mimicking how light stretches as objects recede from us at cosmic speeds.',
     description2: 'This physical manifestation of the Doppler effect transforms the gallery into an expanding universe, where distance is measured in color.',
     images: [
-      'https://images.unsplash.com/photo-1484589065579-248aad0d8b13?q=80&w=1959&auto=format&fit=crop',
+      '/images/Redshifter.png',
       'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop'
     ]
   }

@@ -7,9 +7,10 @@ interface Props {
 	title: string;
   prevProject?: { title: string; slug: string };
   nextProject?: { title: string; slug: string };
+  hideFooter?: boolean;
 }
 
-const { title, prevProject, nextProject } = Astro.props;
+const { title, prevProject, nextProject, hideFooter = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -46,6 +47,6 @@ const { title, prevProject, nextProject } = Astro.props;
 		  <slot />
     </main>
 
-    <Footer />
+    {!hideFooter && <Footer />}
 	</body>
 </html>
