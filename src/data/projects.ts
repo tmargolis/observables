@@ -123,7 +123,7 @@ export const projects: Project[] = [
         'Long exposure capturing the Geminid meteor shower streaks intersecting with star trails.',
         'Star trails rising above the silhouette of sand dunes, emphasizing the earth\'s horizon.',
         'Concentric star paths reflected in the still waters of Goose Lake.',
-        'Star movement captured over the rugged landscape of Wildcat Canyon.'
+        'Star movement captured over the equipment of fellow astrophotographers.'
     ]
   },
   // 5. 3D Horizons
