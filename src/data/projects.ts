@@ -137,7 +137,7 @@ export const projects: Project[] = [
     price: '$1,000.00',
     note: 'n/a',
     isSeries: true,
-    heroImage: '/images/View-Master-Previs2.png',
+    heroImage: '/images/public/images/View-MasterReel (1).png',
     quote: 'Stereoscopic depth in the void.',
     description: 'A custom View-Master experience presenting 7 stereoscopic images of our solar system. By utilizing parallax data from spacecraft and rotational shifts, these reels provide true 3D views of celestial objects.',
     description2: 'Features the icy mountains of Pluto (New Horizons data), the craters of Phobos (Mars Express), and Solar Coronal Mass Ejections (STEREO satellites).',
