@@ -222,8 +222,8 @@ export const projects: Project[] = [
     isSeries: true,
     heroImage: '/images/Whirlpool.jpg',
     quote: 'Folding time onto itself.',
-    description: 'A photo series combining modern astrophotography with historical imagery from the same region of the sky. By overlaying the "Then" onto the "Now," the work highlights the permanence of cosmic structures against the rapid changes of human technology.',
-    description2: 'Features composites of the Whirlpool Galaxy, Andromeda, Eagle Nebula, and Orion, merging sharp modern data with grainy archival plates.',
+    description: 'In the Now and Then series, I explore the profound reality that astronomy is, at its core, the study of the past. Every photon captured by my lens carries a "history of travel," revealing not where a star is today, but where it was when its light began its journey across the void. To bridge the gap between human history and cosmic time, I use ￼AI to generate contextual scenes of the specific historical era on Earth when that light first departed. By inserting the astronomical subject into these reconstructed landscapes and applying textures like fossilized rock, flaking parchment, or ancient stone etchings, I aim to materialize the "latency" of the universe, making the deep time of the cosmos tangible through the lens of human heritage.',
+    description2: 'By inserting the astronomical subject into these reconstructed landscapes and applying textures like fossilized rock, flaking parchment, or ancient stone etchings, I aim to materialize the "latency" of the universe, making the deep time of the cosmos tangible through the lens of human heritage.',
     images: [
       '/images/Whirlpool.jpg',
       '/images/Andromeda.jpg',
