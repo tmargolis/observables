@@ -222,7 +222,7 @@ export const projects: Project[] = [
     isSeries: true,
     heroImage: '/images/Whirlpool.jpg',
     quote: 'Folding time onto itself.',
-    description: 'In the Now and Then series, I explore the profound reality that astronomy is, at its core, the study of the past. Every photon captured by my lens carries a "history of travel," revealing not where a star is today, but where it was when its light began its journey across the void. To bridge the gap between human history and cosmic time, I use ￼AI to generate contextual scenes of the specific historical era on Earth when that light first departed. By inserting the astronomical subject into these reconstructed landscapes and applying textures like fossilized rock, flaking parchment, or ancient stone etchings, I aim to materialize the "latency" of the universe, making the deep time of the cosmos tangible through the lens of human heritage.',
+    description: 'In the Now and Then series, I explore the profound reality that astronomy is, at its core, the study of the past. Every photon captured by my lens carries a "history of travel," revealing not where a star is today, but where it was when its light began its journey across the void. To bridge the gap between human history and cosmic time, I use AI to generate contextual scenes of the specific historical era on Earth when that light first departed.',
     description2: 'By inserting the astronomical subject into these reconstructed landscapes and applying textures like fossilized rock, flaking parchment, or ancient stone etchings, I aim to materialize the "latency" of the universe, making the deep time of the cosmos tangible through the lens of human heritage.',
     images: [
       '/images/Whirlpool.jpg',
@@ -244,12 +244,12 @@ export const projects: Project[] = [
     ],
     imageDescriptions: [
         'This work is presented as a geological fossil, appearing as if the spiral of the galaxy were etched into the very stone of the Earth. It captures the Whirlpool Galaxy as it existed 23 million years ago, a time during the Dawn of the Miocene when the continents were settling into their modern shapes and the Himalayas were still actively rising toward the clouds. By placing the galaxy within a prehistoric landscape, the piece highlights a cosmic structure that was already ancient while the literal foundations of our world were still being forged.',
-        'Historical astronomical plate overlaying a high-definition modern capture of the Andromeda Galaxy.',
-        'The "Pillars of Creation" seen through time, merging Hubble-era clarity with early telescope sketches.',
-        'The Orion Nebula merged with early spectroscopic plates, showing the evolution of imaging.',
-        'Composite view of the Horsehead Nebula, contrasting grain with digital precision.',
-        'The California Nebula shown across eras of observation.',
-        'Detailed view of the California Nebula composite, highlighting specific star forming regions.'
+        'Rendered as a primitive stone etching, this piece portrays our neighbor as it was 2.5 million years ago, a time when Homo habilis first began fashioning primitive tools in East Africa.',
+        'Presented as a Neolithic stone carving, this work depicts the nebula as it appeared 7,000 years ago while early humans were domesticating cattle in a green Sahara and building the first proto-cities.',
+        'Visualized on weathered, flaking parchment, this artwork captures the nebula as it looked 1,344 years ago during the height of the Tang Dynasty and the classic peak of Maya civilization.',
+        'Created with the aesthetic of a Migration Period tapestry, this silhouette shows the nebula as it existed 1,375 years ago while Germanic tribes reshaped Europe and the Gupta Empire thrived in India.',
+        'Styled as a medieval illuminated manuscript, this image captures the nebula as it was 1,000 years ago, a moment when the Norman Conquest reshaped England and the Golden Age of Islam flourished.',
+        'This intricate manuscript-style detail focuses on active star-forming regions as they appeared during the High Middle Ages, a time of Viking voyages and burgeoning global change.'
     ]
   },
   // 9. Sculpture
