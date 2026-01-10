@@ -246,7 +246,7 @@ export const projects: Project[] = [
         'Fossilised into the appearance of ancient rock, this image captures the galaxy as it looked 23 million years ago when the continents were only just settling into their modern positions.',
         'Rendered as a primitive stone etching, this piece portrays our neighbor as it was 2.5 million years ago, a time when Homo habilis first began fashioning primitive tools in East Africa.',
         'Presented as a Neolithic stone carving, this work depicts the nebula as it appeared 7,000 years ago while early humans were domesticating cattle in a green Sahara and building the first proto-cities.',
-        'Visualized on weathered, flaking parchment, this artwork captures the nebula as it looked 1,344 years ago during the height of the Tang Dynasty and the classic peak of Maya civilization.',
+        'Visualized on weathered, flaking parchment, this artwork captures the nebula as it looked 1,344 years ago during the height of the classic peak of Maya civilization.',
         'Created with the aesthetic of a Migration Period tapestry, this silhouette shows the nebula as it existed 1,375 years ago while Germanic tribes reshaped Europe and the Gupta Empire thrived in India.',
         'Styled as a medieval illuminated manuscript, this image captures the nebula as it was 1,000 years ago, a moment when the Norman Conquest reshaped England and the Golden Age of Islam flourished.',
         'This intricate manuscript-style detail focuses on active star-forming regions as they appeared during the High Middle Ages, a time of Viking voyages and burgeoning global change.'
