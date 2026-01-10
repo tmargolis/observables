@@ -20,7 +20,14 @@ const nextProject = projects[currentIndex + 1] || projects[0];
   <!-- Hero -->
   <header class="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
     <div class="absolute inset-0 bg-black/40 z-10"></div>
-    <img src={project.heroImage} alt={project.title} class="w-full h-full object-cover" />
+    {project.videos && project.videos.length > 0 ? (
+       /* Special case: If the hero should be a video, we could check here or just use image. 
+          Currently using heroImage as primary. */
+        <img src={project.heroImage} alt={project.title} class="w-full h-full object-cover" />
+    ) : (
+        <img src={project.heroImage} alt={project.title} class="w-full h-full object-cover" />
+    )}
+    
     <div class="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-12 pb-24">
       {project.isSeries && (
         <span class="font-mono text-xs text-indigo-400 tracking-widest uppercase mb-2 block">Series Collection</span>
@@ -51,22 +58,38 @@ const nextProject = projects[currentIndex + 1] || projects[0];
                /* Even Index: Text Left (if any metadata), Image Right */
                <div class="flex flex-col md:flex-row gap-8 items-center">
                    <div class="flex-1 font-mono text-sm text-gray-400 leading-relaxed text-right md:text-right w-full">
-                      <span class="block text-white mb-2 uppercase tracking-widest">Variation {i+1}</span>
+                      {project.imageTitles && project.imageTitles[i] && (
+                        <span class="block text-white mb-2 uppercase tracking-widest">{project.imageTitles[i]}</span>
+                      )}
+                      <span class="block text-xs uppercase tracking-widest mb-2">Variation 0{i+1}</span>
                       <p>Archival pigment print on cotton rag.</p>
                    </div>
                    <div class="flex-1 w-full">
-                      <img src={img} class="w-full grayscale hover:grayscale-0 transition-all duration-500" alt={`Series Variation ${i+1}`} />
+                      <img 
+                        src={img} 
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" 
+                        alt={`Series Variation ${i+1}`}
+                        onclick={`openLightbox('${img}')`}
+                      />
                    </div>
                </div>
              ) : (
                /* Odd Index: Image Left, Text Right */
                <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
                     <div class="flex-1 font-mono text-sm text-gray-400 leading-relaxed text-left w-full">
-                      <span class="block text-white mb-2 uppercase tracking-widest">Variation {i+1}</span>
+                      {project.imageTitles && project.imageTitles[i] && (
+                        <span class="block text-white mb-2 uppercase tracking-widest">{project.imageTitles[i]}</span>
+                      )}
+                      <span class="block text-xs uppercase tracking-widest mb-2">Variation 0{i+1}</span>
                       <p>Archival pigment print on cotton rag.</p>
                    </div>
                    <div class="flex-1 w-full">
-                      <img src={img} class="w-full grayscale hover:grayscale-0 transition-all duration-500" alt={`Series Variation ${i+1}`} />
+                      <img 
+                        src={img} 
+                        class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" 
+                        alt={`Series Variation ${i+1}`} 
+                        onclick={`openLightbox('${img}')`}
+                      />
                    </div>
                </div>
              )
@@ -92,7 +115,12 @@ const nextProject = projects[currentIndex + 1] || projects[0];
              ) : (
                 /* Fallback to Image Carousel */
                 project.images.map(img => (
-                  <img src={img} class="w-full h-full object-cover flex-shrink-0 snap-center" alt="Detail view" />
+                  <img 
+                    src={img} 
+                    class="w-full h-full object-cover flex-shrink-0 snap-center cursor-zoom-in" 
+                    alt="Detail view" 
+                    onclick={`openLightbox('${img}')`}
+                  />
                 ))
              )}
           </div>
@@ -103,7 +131,7 @@ const nextProject = projects[currentIndex + 1] || projects[0];
                    <p>{project.description}</p>
                 </div>
                 <div class="flex-1">
-                   {project.images[1] && <img src={project.images[1]} class="w-full grayscale hover:grayscale-0 transition-all duration-500" alt="Detail" /> || <img src={project.images[0]} class="w-full grayscale hover:grayscale-0 transition-all duration-500" alt="Detail" />}
+                   {project.images[1] && <img src={project.images[1]} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.images[1]}')`} /> || <img src={project.images[0]} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.images[0]}')`} />}
                 </div>
             </div>
 
@@ -112,7 +140,7 @@ const nextProject = projects[currentIndex + 1] || projects[0];
                    <p>{project.description2}</p>
                 </div>
                 <div class="flex-1">
-                   <img src={project.heroImage} class="w-full grayscale hover:grayscale-0 transition-all duration-500" alt="Detail" />
+                   <img src={project.heroImage} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.heroImage}')`} />
                 </div>
             </div>
           </div>
@@ -140,19 +168,97 @@ const nextProject = projects[currentIndex + 1] || projects[0];
           <span class="block text-gray-600 mb-1">Weight</span>
           <span class="text-white">{project.weight}</span>
         </div>
-        {project.note && (
-           <div class="pt-4 border-t border-white/10">
-            <span class="block text-indigo-400">{project.note}</span>
-          </div>
-        )}
+        
+        {/* Protected Logistics & Price Section */}
+        <div id="protected-meta" class="hidden space-y-4 pt-8 border-t border-white/10">
+           <h4 class="font-serif text-white italic">Logistics</h4>
+           {project.price && (
+            <div>
+              <span class="block text-gray-600 mb-1">Price</span>
+              <span class="text-green-400">{project.price}</span>
+            </div>
+           )}
+           {project.note && (
+             <div>
+              <span class="block text-gray-600 mb-1">Requirements</span>
+              <span class="text-indigo-400">{project.note}</span>
+            </div>
+           )}
+        </div>
+
       </div>
     </div>
 
   </div>
+
+  <!-- About the Artist Section (Specific for Project Page) -->
+  <section class="bg-white/5 border-t border-white/10 py-16 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h3 class="font-serif text-3xl italic mb-6">About the Artist</h3>
+        <p class="font-mono text-sm text-gray-400 mb-8 leading-relaxed">
+          The artist explores the boundaries between digital precision and organic chaos. Through a rigorous process of simulation and fabrication, they bring the invisible forces of the cosmos into tangible form.
+        </p>
+        <a href="/bio/" class="inline-block border border-white/20 px-6 py-3 font-mono text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
+          Learn More
+        </a>
+      </div>
+      <div class="relative aspect-square md:aspect-[4/3] bg-gray-800 overflow-hidden">
+        <!-- Placeholder Portrait -->
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover grayscale opacity-80" alt="Artist Portrait" />
+      </div>
+    </div>
+  </section>
 
   <!-- Fixed Inquiry Button -->
   <a href="/contact/" class="fixed bottom-8 right-8 z-50 bg-white text-black font-mono text-xs px-6 py-3 uppercase tracking-widest hover:bg-indigo-500 hover:text-white transition-all duration-300 shadow-lg shadow-indigo-500/20">
       Inquire about this artwork
   </a>
 
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl hidden flex items-center justify-center cursor-zoom-out p-4" onclick="closeLightbox()">
+     <img id="lightbox-img" src="" class="max-w-full max-h-full object-contain shadow-2xl shadow-black" />
+     <button class="absolute top-6 right-6 text-white font-mono text-xl hover:text-indigo-400">[X]</button>
+  </div>
+
 </Layout>
+
+<script is:inline>
+  // Lightbox Logic
+  function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    if (lightbox && img) {
+      img.src = src;
+      lightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = ''; // Restore scrolling
+    }
+  }
+
+  // Auth Logic for Logistics/Price
+  window.addEventListener("load", async function () {
+      const checkClerk = setInterval(async () => {
+          // @ts-ignore
+          if (window.Clerk) {
+              clearInterval(checkClerk);
+              // @ts-ignore
+              await window.Clerk.load();
+              
+              const protectedMeta = document.getElementById('protected-meta');
+              
+              // @ts-ignore
+              if (window.Clerk.user && protectedMeta) {
+                  protectedMeta.classList.remove('hidden');
+              }
+          }
+      }, 100);
+  });
+</script>

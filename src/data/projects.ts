@@ -5,25 +5,28 @@ export interface Project {
   medium: string;
   dimensions: string;
   weight: string;
+  price?: string;
   note: string;
   heroImage: string;
   quote: string;
   description: string;
   description2: string;
   images: string[];
-  videos?: string[]; // Optional video support
+  videos?: string[];
   isSeries?: boolean;
+  imageTitles?: string[];
 }
 
 export const projects: Project[] = [
   // 1. Bang
   {
     slug: 'bang',
-    title: 'Work 01: Bang',
+    title: 'Bang',
     year: '2026',
     medium: 'Kinetic Installation (Latex, Pneumatics)',
-    dimensions: 'Variable (14" to 5.5\')',
+    dimensions: '48 x 48 inches',
     weight: '25kg',
+    price: '$2,500.00',
     note: 'Requires 15A Circuit',
     heroImage: '/images/image.png',
     quote: 'A breathing universe.',
@@ -33,17 +36,18 @@ export const projects: Project[] = [
       '/images/image.png',
     ],
     videos: [
-      '/images/Balloon Expanding Closeup.mp4' // Video of the balloon
+      '/images/Balloon Expanding Closeup.mp4' 
     ]
   },
-  // 2. Black Hole Vision (Spaghettification)
+  // 2. Black Hole Vision
   {
     slug: 'black-hole-vision',
-    title: 'Work 02: Black Hole Vision',
+    title: 'Black Hole Vision',
     year: '2026',
     medium: 'Digital Simulation',
-    dimensions: 'Projection Variable',
+    dimensions: '20 x 55 inches',
     weight: 'N/A',
+    price: '$5,000.00',
     note: 'Visualizing Spaghettification',
     heroImage: '/images/Spaghettification.jpg',
     quote: 'The tidal force of the infinite.',
@@ -57,11 +61,12 @@ export const projects: Project[] = [
   // 3. Delayed Vision
   {
     slug: 'delayed-vision',
-    title: 'Work 03: Delayed Vision',
+    title: 'Delayed Vision',
     year: '2026',
     medium: 'Video Mirror Series',
-    dimensions: 'Variable',
+    dimensions: 'Variable (10x10in to 20x20in)',
     weight: 'Variable',
+    price: 'Inquire for Series',
     note: 'Series of 3 Works',
     isSeries: true,
     heroImage: '/images/delayed-vision-hero.jpg',
@@ -71,16 +76,21 @@ export const projects: Project[] = [
     images: [
       '/images/delayed-vision-hero.jpg',
       '/images/delayed-vision-2.jpg'
+    ],
+    imageTitles: [
+        'Installation View',
+        'Detail View'
     ]
   },
   // 4. Star Trails
   {
     slug: 'star-trails',
-    title: 'Work 04: Star Trails',
-    year: '2026',
+    title: 'Star Trails',
+    year: '2024-2026',
     medium: 'Archival Pigment Prints',
-    dimensions: '40x60cm (Framed)',
+    dimensions: '20 x 30 inches each',
     weight: '5kg each',
+    price: '$1,000.00 each',
     note: 'Photo Series',
     isSeries: true,
     heroImage: '/images/GeminidTrails.jpg',
@@ -92,16 +102,23 @@ export const projects: Project[] = [
       '/images/DunesTrails8.jpg',
       '/images/GooseLakeTrails5.jpg',
       '/images/WildcatTrails_gap_fillComet.jpg'
+    ],
+    imageTitles: [
+      'Geminid',
+      'Dunes',
+      'Goose Lake',
+      'Wildcat'
     ]
   },
   // 5. 3D Horizons
   {
     slug: '3d-horizons',
-    title: 'Work 05: 3D Horizons',
+    title: '3D Horizons',
     year: '2026',
     medium: 'Stereoscopic View-Master',
-    dimensions: 'Custom Reel & Viewer',
+    dimensions: '10 x 10 inches',
     weight: '0.5kg',
+    price: '$1,000.00',
     note: 'Interactive Object',
     heroImage: '/images/View-Master.jpg',
     quote: 'Stereoscopic depth in the void.',
@@ -109,13 +126,13 @@ export const projects: Project[] = [
     description2: 'Features the icy mountains of Pluto (New Horizons data), the craters of Phobos (Mars Express), and Solar Coronal Mass Ejections (STEREO satellites).',
     images: [
       '/images/View-Master.jpg',
-      'https://images.unsplash.com/photo-1454789548728-85d028b4d80b?q=80&w=2070&auto=format&fit=crop'
+      '/images/view-master-detail.jpg'
     ]
   },
   // 6. Audio Counter
   {
     slug: 'audio-counter',
-    title: 'Work 06: Audio Counter',
+    title: 'Audio Counter',
     year: '2026',
     medium: 'Generative Audio',
     dimensions: 'Variable',
@@ -133,11 +150,12 @@ export const projects: Project[] = [
   // 7. The Edge
   {
     slug: 'the-edge',
-    title: 'Work 07: The Edge',
+    title: 'The Edge',
     year: '2026',
     medium: 'Laminar Flow Fog Screen',
-    dimensions: '2.5m x 1.5m',
+    dimensions: '70 x 30 inches',
     weight: '30kg',
+    price: '$10,000.00',
     note: 'Requires still air environment',
     heroImage: '/images/LaminarFlowMethod-1.png',
     quote: 'A curtain of uncertainty.',
@@ -151,11 +169,12 @@ export const projects: Project[] = [
   // 8. Now & Then
   {
     slug: 'now-and-then',
-    title: 'Work 08: Now & Then',
+    title: 'Now & Then',
     year: '2026',
     medium: 'Mixed Media Series',
-    dimensions: 'Variable',
+    dimensions: '20 x 30 inches each',
     weight: 'Variable',
+    price: '$1,000.00 each',
     note: 'Composite Photography',
     isSeries: true,
     heroImage: '/images/Whirlpool.jpg',
@@ -170,12 +189,21 @@ export const projects: Project[] = [
       '/images/Horsehead and flame nebulas.png',
       '/images/California nebula.jpg',
       '/images/California nebula (1).jpg'
+    ],
+    imageTitles: [
+        'Whirlpool',
+        'Andromeda',
+        'Eagle',
+        'Orion',
+        'Horsehead',
+        'California',
+        'California (Detail)'
     ]
   },
-  // 9. Sculpture (Placeholder)
+  // 9. Sculpture
   {
     slug: 'sculpture',
-    title: 'Work 09: Sculpture Series',
+    title: 'Sculpture Series',
     year: '2026',
     medium: 'Cast Material',
     dimensions: 'Variable',
@@ -189,16 +217,21 @@ export const projects: Project[] = [
     images: [
       '/images/sculpture-hero.jpg',
       '/images/sculpture-2.jpg'
+    ],
+    imageTitles: [
+        'Moon Surface',
+        'Crater Detail'
     ]
   },
   // 10. CMB VR
   {
     slug: 'cmb-vr',
-    title: 'Work 10: CMB VR',
+    title: 'CMB VR',
     year: '2026',
     medium: 'Virtual Reality',
-    dimensions: 'Headset',
+    dimensions: '40 x 60 inches',
     weight: '0.5kg',
+    price: '$5,000.00',
     note: 'Immersive Environment',
     heroImage: '/images/Screenshot_20260101-084458~2.png',
     quote: 'Inside the first light.',
@@ -209,14 +242,15 @@ export const projects: Project[] = [
       'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'
     ]
   },
-  // 11. Redshifter (Placeholder)
+  // 11. Redshifter
   {
     slug: 'redshifter',
-    title: 'Work 11: Redshifter',
+    title: 'Redshifter',
     year: '2026',
     medium: 'Room Installation',
-    dimensions: 'Variable Room Scale',
+    dimensions: '70 x 30 inches',
     weight: 'N/A',
+    price: '$10,000.00',
     note: 'Lighting Environment',
     heroImage: 'https://images.unsplash.com/photo-1484589065579-248aad0d8b13?q=80&w=1959&auto=format&fit=crop',
     quote: 'The color of velocity.',
