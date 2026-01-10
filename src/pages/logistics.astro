@@ -16,38 +16,140 @@ import Layout from '../layouts/Layout.astro';
             Authenticated: Institutional Access granted
         </div>
         
-        <h1 class="font-serif text-4xl md:text-6xl mb-12 text-center">Logistics & Installation</h1>
+        <div class="flex flex-col md:flex-row items-center justify-between mb-12 gap-6">
+            <h1 class="font-serif text-4xl md:text-6xl text-center md:text-left">Logistics & Installation</h1>
+            <a href="/Exhibition Prospectus.pdf" target="_blank" class="border border-white/20 text-indigo-400 font-mono text-xs px-6 py-3 uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">
+                Download Prospectus [PDF]
+            </a>
+        </div>
         
-        <div class="space-y-12 font-mono text-sm text-gray-400">
+        <div class="space-y-16 font-mono text-sm text-gray-400">
+            
+            <!-- 1. Bang -->
             <div>
-                <h3 class="text-white text-lg mb-4 border-b border-white/10 pb-2">01. Technical Riders</h3>
-                <p>All works require independent 15A circuits. Access to localized dimming control is mandatory for the "Horizon Event" projection.</p>
-                <ul class="list-disc list-inside mt-4 space-y-2 text-xs text-gray-500">
-                    <li>Power: 110V/220V compatible</li>
-                    <li>Networking: Local LAN for controller sync</li>
-                    <li>Spacing: Minimum 2m clearance for sensor activation</li>
+                <h3 class="font-serif text-white text-2xl italic mb-6 border-b border-white/10 pb-4">1. Bang</h3>
+                <ul class="space-y-3">
+                    <li><strong class="text-white">Medium:</strong> Kinetic Installation (Latex, Pneumatics).</li>
+                    <li><strong class="text-white">Dimensions:</strong> 48 x 24 x 24 inches.</li>
+                    <li><strong class="text-white">Weight:</strong> 25 lbs.</li>
+                    <li><strong class="text-white">Technical Rider:</strong> Requires a 15A Circuit for the closed-loop pneumatic system.</li>
                 </ul>
             </div>
 
+            <!-- 2. Black Hole Vision -->
             <div>
-                 <h3 class="text-white text-lg mb-4 border-b border-white/10 pb-2">02. Shipping & Crate Dimensions</h3>
-                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white/5 p-4">
-                        <span class="block text-white mb-2">Crate A (Nebulae Core)</span>
-                        <span>50x50x20cm | 18kg</span>
-                    </div>
-                    <div class="bg-white/5 p-4">
-                        <span class="block text-white mb-2">Crate B (Tectonic Drift)</span>
-                        <span>210x110x30cm | 65kg</span>
-                    </div>
-                 </div>
+                <h3 class="font-serif text-white text-2xl italic mb-6 border-b border-white/10 pb-4">2. Black Hole Vision</h3>
+                <ul class="space-y-3">
+                    <li><strong class="text-white">Medium:</strong> Virtual Reality.</li>
+                    <li><strong class="text-white">Dimensions:</strong> 7 x 6 x 12 inches.</li>
+                    <li><strong class="text-white">Weight:</strong> 1 lb.</li>
+                    <li><strong class="text-white">Technical Rider:</strong> Requires dedicated power for the VR headset/processing unit.</li>
+                </ul>
             </div>
 
-             <div class="pt-12 text-center">
-                 <a href="mailto:studio@observables.art" class="border border-white/20 px-8 py-3 text-white hover:bg-white hover:text-black transition-colors uppercase tracking-widest text-xs">
-                     Download Full Technical PDF
-                 </a>
+            <!-- 3. Delayed Vision -->
+            <div>
+                <h3 class="font-serif text-white text-2xl italic mb-6 border-b border-white/10 pb-4">3. Delayed Vision (Video Mirror Series)</h3>
+                <ul class="space-y-3">
+                    <li><strong class="text-white">Medium:</strong> Android app running on Galaxy Tab A9+ Tablet.</li>
+                    <li><strong class="text-white">Configuration:</strong> A series of three (3) tablets.</li>
+                    <li><strong class="text-white">Dimensions:</strong> 11 x 7 x 1 inches per unit.</li>
+                    <li><strong class="text-white">Weight:</strong> 1 lb per unit.</li>
+                    <li>
+                        <strong class="text-white">Technical Rider:</strong>
+                        <ul class="list-disc pl-6 mt-2 space-y-2 text-gray-500">
+                            <li>Power required for each tablet.</li>
+                            <li>Ambient light must be sufficient for integrated cameras to capture viewer reflections.</li>
+                            <li>Note: All video processing is performed locally on the tablet itself; no internet connection is required.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
+
+            <!-- 4. Star Trails -->
+            <div>
+                <h3 class="font-serif text-white text-2xl italic mb-6 border-b border-white/10 pb-4">4. Star Trails</h3>
+                <ul class="space-y-3">
+                    <li><strong class="text-white">Medium:</strong> Archival Pigment Prints.</li>
+                    <li><strong class="text-white">Configuration:</strong> A series of four (4) prints.</li>
+                    <li><strong class="text-white">Dimensions:</strong> 20 x 30 inches each.</li>
+                    <li><strong class="text-white">Weight:</strong> 5kg total.</li>
+                    <li><strong class="text-white">Technical Rider:</strong> Wall-mounted installation; standard gallery lighting.</li>
+                </ul>
+            </div>
+
+            <!-- 5. 3D Horizons -->
+            <div>
+                <h3 class="font-serif text-white text-2xl italic mb-6 border-b border-white/10 pb-4">5. 3D Horizons (Stereoscopic View-Master)</h3>
+                <ul class="space-y-3">
+                    <li><strong class="text-white">Medium:</strong> Custom stereoscopic reels and handheld viewers.</li>
+                    <li><strong class="text-white">Dimensions:</strong> 6 x 10 x 3 inches.</li>
+                </ul>
+            </div>
+
+            <!-- 6. Audio Counter -->
+            <div>
+                <h3 class="font-serif text-white text-2xl italic mb-6 border-b border-white/10 pb-4">6. Audio Counter</h3>
+                <ul class="space-y-3">
+                    <li><strong class="text-white">Medium:</strong> Generative Audio.</li>
+                    <li><strong class="text-white">Dimensions:</strong> Variable.</li>
+                    <li><strong class="text-white">Technical Rider:</strong> Stereo Speakers.</li>
+                </ul>
+            </div>
+
+            <!-- 7. The Edge -->
+            <div>
+                <h3 class="font-serif text-white text-2xl italic mb-6 border-b border-white/10 pb-4">7. The Edge</h3>
+                <ul class="space-y-3">
+                    <li><strong class="text-white">Medium:</strong> Laminar Flow Fog Screen.</li>
+                    <li><strong class="text-white">Dimensions:</strong> 70 x 30 inches.</li>
+                    <li><strong class="text-white">Weight:</strong> 30kg.</li>
+                    <li><strong class="text-white">Technical Rider:</strong> Requires non-windy environment.</li>
+                </ul>
+            </div>
+
+            <!-- 8. Now & Then -->
+            <div>
+                <h3 class="font-serif text-white text-2xl italic mb-6 border-b border-white/10 pb-4">8. Now & Then</h3>
+                <ul class="space-y-3">
+                    <li><strong class="text-white">Medium:</strong> Archival Prints.</li>
+                    <li><strong class="text-white">Dimensions:</strong> 20 x 30 inches each.</li>
+                    <li><strong class="text-white">Weight:</strong> 1 lb.</li>
+                </ul>
+            </div>
+
+            <!-- 9. Sculpture -->
+            <div>
+                <h3 class="font-serif text-white text-2xl italic mb-6 border-b border-white/10 pb-4">9. Sculpture Series</h3>
+                <ul class="space-y-3">
+                    <li><strong class="text-white">Medium:</strong> Cast Material.</li>
+                    <li><strong class="text-white">Dimensions:</strong> Variable.</li>
+                    <li><strong class="text-white">Weight:</strong> Variable.</li>
+                    <li><strong class="text-white">Technical Rider:</strong> Delicate packing.</li>
+                </ul>
+            </div>
+
+            <!-- 10. CMB VR -->
+            <div>
+                <h3 class="font-serif text-white text-2xl italic mb-6 border-b border-white/10 pb-4">10. CMB VR</h3>
+                <ul class="space-y-3">
+                    <li><strong class="text-white">Medium:</strong> Virtual Reality.</li>
+                    <li><strong class="text-white">Dimensions:</strong> 7 x 6 x 12 inches.</li>
+                    <li><strong class="text-white">Weight:</strong> 1 lb.</li>
+                    <li><strong class="text-white">Technical Rider:</strong> Requires power.</li>
+                </ul>
+            </div>
+
+            <!-- 11. Redshifter -->
+            <div>
+                <h3 class="font-serif text-white text-2xl italic mb-6 border-b border-white/10 pb-4">11. Redshifter</h3>
+                <ul class="space-y-3">
+                    <li><strong class="text-white">Medium:</strong> Room Installation.</li>
+                    <li><strong class="text-white">Dimensions:</strong> 70 x 30 inches.</li>
+                    <li><strong class="text-white">Technical Rider:</strong> 1 Large (ideally 12 foot diagonal) short throw projector. Camera and LIDAR ceiling mounted.</li>
+                </ul>
+            </div>
+
         </div>
     </div>
 
