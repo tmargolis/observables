@@ -76,8 +76,11 @@ const nextProject = projects[currentIndex + 1] || projects[0];
                       {project.imageTitles && project.imageTitles[i] && (
                         <span class="block text-white mb-2 uppercase tracking-widest">{project.imageTitles[i]}</span>
                       )}
-                      <span class="block text-xs uppercase tracking-widest mb-2">Variation 0{i+1}</span>
-                      <p>Archival pigment print on cotton rag.</p>
+                      {project.imageDescriptions && project.imageDescriptions[i] ? (
+                        <p>{project.imageDescriptions[i]}</p>
+                      ) : (
+                        <p>Archival pigment print on cotton rag.</p>
+                      )}
                    </div>
                    <div class="flex-1 w-full">
                       <img 
@@ -95,8 +98,11 @@ const nextProject = projects[currentIndex + 1] || projects[0];
                       {project.imageTitles && project.imageTitles[i] && (
                         <span class="block text-white mb-2 uppercase tracking-widest">{project.imageTitles[i]}</span>
                       )}
-                      <span class="block text-xs uppercase tracking-widest mb-2">Variation 0{i+1}</span>
-                      <p>Archival pigment print on cotton rag.</p>
+                      {project.imageDescriptions && project.imageDescriptions[i] ? (
+                        <p>{project.imageDescriptions[i]}</p>
+                      ) : (
+                        <p>Archival pigment print on cotton rag.</p>
+                      )}
                    </div>
                    <div class="flex-1 w-full">
                       <img 

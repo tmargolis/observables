@@ -15,6 +15,7 @@ export interface Project {
   videos?: string[];
   isSeries?: boolean;
   imageTitles?: string[];
+  imageDescriptions?: string[]; // New field for specific descriptions per image
   contextImage?: string;
   contextCaption?: string;
 }
@@ -26,8 +27,8 @@ export const projects: Project[] = [
     title: 'Bang',
     year: '2026',
     medium: 'Kinetic Installation (Latex, Pneumatics)',
-    dimensions: '48 x 48 inches',
-    weight: '25kg',
+    dimensions: '48 x 24 x 24 inches',
+    weight: '25 lb',
     price: '$2,500.00',
     note: 'Requires 15A Circuit',
     heroImage: '/images/image.png',
@@ -46,11 +47,11 @@ export const projects: Project[] = [
     slug: 'black-hole-vision',
     title: 'Black Hole Vision',
     year: '2026',
-    medium: 'Digital Simulation',
-    dimensions: '20 x 55 inches',
-    weight: 'N/A',
+    medium: 'Virtual Reality',
+    dimensions: '7 x 6 x 12 inches',
+    weight: '1 lb',
     price: '$5,000.00',
-    note: 'Visualizing Spaghettification',
+    note: 'Requires power',
     heroImage: '/images/Spaghettification.jpg',
     quote: 'The tidal force of the infinite.',
     description: 'Spaghettification visualizes the theoretical process where extreme tidal forces stretch matter vertically and squeeze it horizontally. This simulation invites the viewer to witness the distortion of an object as it approaches the event horizon.',
@@ -65,11 +66,11 @@ export const projects: Project[] = [
     slug: 'delayed-vision',
     title: 'Delayed Vision',
     year: '2026',
-    medium: 'Video Mirror Series',
-    dimensions: 'Variable (10x10in to 20x20in)',
-    weight: 'Variable',
-    price: 'Inquire for Series',
-    note: 'Series of 3 Works',
+    medium: 'Android app running on  Galaxy A9+ Tablet',
+    dimensions: '11 x 7 x 1 inches',
+    weight: '1 lb',
+    price: '$1000 each',
+    note: 'Power to each tablet. Light so tablet camera can see',
     isSeries: true,
     heroImage: '/images/Sun_Previs-1.png', // Using Sun as hero
     quote: 'Light is a fossil of time.',
@@ -84,6 +85,11 @@ export const projects: Project[] = [
         'The Moon (1.3s delay)',
         'The Sun (8m 20s delay)',
         'Saturn (79m delay)'
+    ],
+    imageDescriptions: [
+        'A video mirror reflecting the viewer with a 1.3-second delay, matching the light travel time from the Moon to Earth.',
+        'A video mirror reflecting the viewer with an 8-minute, 20-second delay, representing the time it takes sunlight to reach our eyes.',
+        'A video mirror with a 79-minute delay, corresponding to the average light travel time from Saturn.'
     ]
   },
   // 4. Star Trails
@@ -95,7 +101,7 @@ export const projects: Project[] = [
     dimensions: '20 x 30 inches each',
     weight: '5kg each',
     price: '$1,000.00 each',
-    note: 'Photo Series',
+    note: 'n/a',
     isSeries: true,
     heroImage: '/images/GeminidTrails.jpg',
     quote: 'Earth\'s rotation captured in light.',
@@ -112,6 +118,12 @@ export const projects: Project[] = [
       'Dunes',
       'Goose Lake',
       'Wildcat'
+    ],
+    imageDescriptions: [
+        'Long exposure capturing the Geminid meteor shower streaks intersecting with star trails.',
+        'Star trails rising above the silhouette of sand dunes, emphasizing the earth\'s horizon.',
+        'Concentric star paths reflected in the still waters of Goose Lake.',
+        'Star movement captured over the rugged landscape of Wildcat Canyon.'
     ]
   },
   // 5. 3D Horizons
@@ -120,10 +132,10 @@ export const projects: Project[] = [
     title: '3D Horizons',
     year: '2026',
     medium: 'Stereoscopic View-Master',
-    dimensions: '10 x 10 inches',
+    dimensions: '6 x 10 x 3 inches',
     weight: '0.5kg',
     price: '$1,000.00',
-    note: 'Interactive Object',
+    note: 'n/a',
     isSeries: true,
     heroImage: '/images/View-Master-Previs2.png',
     quote: 'Stereoscopic depth in the void.',
@@ -148,6 +160,15 @@ export const projects: Project[] = [
         'Asteroids',
         'Proxima Centauri',
         'The Moon (Stereo)'
+    ],
+    imageDescriptions: [
+        'Stereoscopic view of Pluto\'s icy mountains derived from New Horizons data.',
+        'Close-up stereoscopic detail of the texture of Pluto\'s surface.',
+        '3D visualization of the Martian moon Phobos, revealing its irregular shape.',
+        'Stereoscopic capture of solar surface activity and coronal ejections.',
+        '3D view of an asteroid field simulation.',
+        'Stereoscopic rendering of Proxima Centauri, our nearest star neighbor.',
+        '3D view of the lunar landscape showing depth of craters and maria.'
     ]
   },
   // 6. Audio Counter
@@ -158,14 +179,15 @@ export const projects: Project[] = [
     medium: 'Generative Audio',
     dimensions: 'Variable',
     weight: 'N/A',
-    note: 'Aural representation',
-    heroImage: 'https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?q=80&w=2023&auto=format&fit=crop',
+    note: 'Stereo Speakers',
+    heroImage: '/images/DeepField.png',
     quote: 'The sound of 200 billion trillion.',
     description: 'An auditory experiment attempting to quantify the observable universe. With 2 trillion galaxies each holding 100 billion stars, counting them one by one would take 6.3 quadrillion years.',
     description2: 'This piece uses generative machine sound to sonify these magnitudes, creating a chorus where each Hz frequency represents the star count of a specific galaxy.',
     images: [
-      'https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?q=80&w=2023&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop'
+      '/images/Audio_Stats.png',
+      '/images/DeepField.png',
+      '/images/DeepField2.png'
     ]
   },
   // 7. The Edge
@@ -177,7 +199,7 @@ export const projects: Project[] = [
     dimensions: '70 x 30 inches',
     weight: '30kg',
     price: '$10,000.00',
-    note: 'Requires still air environment',
+    note: 'Requires non-windy environment',
     heroImage: '/images/LaminarFlowMethod-1.png',
     quote: 'A curtain of uncertainty.',
     description: 'Using laminar flow technology to create a perfect, thin wall of fog. This intangible screen represents the edge of the observable universe—a boundary that is both visible and permeable, yet ultimately obscures what lies beyond.',
@@ -192,11 +214,11 @@ export const projects: Project[] = [
     slug: 'now-and-then',
     title: 'Now & Then',
     year: '2026',
-    medium: 'Mixed Media Series',
+    medium: 'Archival Prints',
     dimensions: '20 x 30 inches each',
-    weight: 'Variable',
+    weight: '1 lb',
     price: '$1,000.00 each',
-    note: 'Composite Photography',
+    note: 'n/a',
     isSeries: true,
     heroImage: '/images/Whirlpool.jpg',
     quote: 'Folding time onto itself.',
@@ -219,6 +241,15 @@ export const projects: Project[] = [
         'Horsehead',
         'California',
         'California (Detail)'
+    ],
+    imageDescriptions: [
+        'Composite of modern deep-field capture and 19th-century archival imagery of the Whirlpool Galaxy.',
+        'Historical astronomical plate overlaying a high-definition modern capture of the Andromeda Galaxy.',
+        'The "Pillars of Creation" seen through time, merging Hubble-era clarity with early telescope sketches.',
+        'The Orion Nebula merged with early spectroscopic plates, showing the evolution of imaging.',
+        'Composite view of the Horsehead Nebula, contrasting grain with digital precision.',
+        'The California Nebula shown across eras of observation.',
+        'Detailed view of the California Nebula composite, highlighting specific star forming regions.'
     ]
   },
   // 9. Sculpture
@@ -229,7 +260,7 @@ export const projects: Project[] = [
     medium: 'Cast Material',
     dimensions: 'Variable',
     weight: 'Variable',
-    note: 'Physical Reliefs',
+    note: 'Delicate packing',
     isSeries: true,
     heroImage: '/images/Spheroids-Previs1.png', 
     quote: 'Tactile astronomy.',
@@ -250,6 +281,13 @@ export const projects: Project[] = [
         'Moon',
         'Sun',
         'Black Hole'
+    ],
+    imageDescriptions: [
+        'Scaled ceramic relief model of the planet Mars, based on MOLA altimetry data.',
+        'Tactile representation of the Milky Way galaxy structure, emphasizing the galactic plane.',
+        'Topographic relief of the lunar surface, allowing the viewer to touch the craters and maria.',
+        'Sculptural interpretation of solar flares and surface activity, solidified in cast material.',
+        'Physical visualization of an event horizon, giving form to the invisible pull of a black hole.'
     ]
   },
   // 10. CMB VR
@@ -258,10 +296,10 @@ export const projects: Project[] = [
     title: 'CMB VR',
     year: '2026',
     medium: 'Virtual Reality',
-    dimensions: '40 x 60 inches',
-    weight: '0.5kg',
+    dimensions: '7 x 6 x 12 inches',
+    weight: '1 lb',
     price: '$5,000.00',
-    note: 'Immersive Environment',
+    note: 'Requires power',
     heroImage: '/images/Screenshot_20260101-084458~2.png',
     quote: 'Inside the first light.',
     description: 'A Virtual Reality experience where the user is placed inside a sphere mapped with the Cosmic Microwave Background radiation data. You are floating inside the afterglow of the Big Bang.',
@@ -280,7 +318,7 @@ export const projects: Project[] = [
     dimensions: '70 x 30 inches',
     weight: 'N/A',
     price: '$10,000.00',
-    note: 'Lighting Environment',
+    note: '1 Large (ideally 12 foot diagonal) short throw projector. Camera and LIDAR ceiling mounted',
     heroImage: '/images/Redshifter.png',
     quote: 'The color of velocity.',
     description: 'An immersive room installation that simulates the Redshift effect. As viewers move through the space, the lighting shifts spectrum, mimicking how light stretches as objects recede from us at cosmic speeds.',
