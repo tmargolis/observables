@@ -243,7 +243,7 @@ export const projects: Project[] = [
         'California (Detail)'
     ],
     imageDescriptions: [
-        'This work is presented as a geological fossil, appearing as if the spiral of the galaxy were etched into the very stone of the Earth. It captures the Whirlpool Galaxy as it existed 23 million years ago, a time during the Dawn of the Miocene when the continents were settling into their modern shapes and the Himalayas were still actively rising toward the clouds. By placing the galaxy within a prehistoric landscape, the piece highlights a cosmic structure that was already ancient while the literal foundations of our world were still being forged.',
+        'Fossilised into the appearance of ancient rock, this image captures the galaxy as it looked 23 million years ago when the continents were only just settling into their modern positions.',
         'Rendered as a primitive stone etching, this piece portrays our neighbor as it was 2.5 million years ago, a time when Homo habilis first began fashioning primitive tools in East Africa.',
         'Presented as a Neolithic stone carving, this work depicts the nebula as it appeared 7,000 years ago while early humans were domesticating cattle in a green Sahara and building the first proto-cities.',
         'Visualized on weathered, flaking parchment, this artwork captures the nebula as it looked 1,344 years ago during the height of the Tang Dynasty and the classic peak of Maya civilization.',
