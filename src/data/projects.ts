@@ -243,7 +243,7 @@ export const projects: Project[] = [
         'California (Detail)'
     ],
     imageDescriptions: [
-        'Composite of modern deep-field capture and 19th-century archival imagery of the Whirlpool Galaxy.',
+        'This work is presented as a geological fossil, appearing as if the spiral of the galaxy were etched into the very stone of the Earth. It captures the Whirlpool Galaxy as it existed 23 million years ago, a time during the Dawn of the Miocene when the continents were settling into their modern shapes and the Himalayas were still actively rising toward the clouds. By placing the galaxy within a prehistoric landscape, the piece highlights a cosmic structure that was already ancient while the literal foundations of our world were still being forged.',
         'Historical astronomical plate overlaying a high-definition modern capture of the Andromeda Galaxy.',
         'The "Pillars of Creation" seen through time, merging Hubble-era clarity with early telescope sketches.',
         'The Orion Nebula merged with early spectroscopic plates, showing the evolution of imaging.',
