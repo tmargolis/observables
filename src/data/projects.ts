@@ -36,7 +36,8 @@ export const projects: Project[] = [
     description: 'Bang is a kinetic art installation that transforms a scientific tool into a cosmic metaphor. Using a closed-loop pneumatic system, a 100g black weather balloon cycles between a dense "singularity" (14 inches) and a massive 5.5-foot expansion.',
     description2: 'The deep black surface absorbs light, creating a silhouette that feels like a hole in the gallery space. The rhythm of inflation and deflation mimics the "cosmic breath"—a perpetual cycle of creation (Big Bang) and destruction (Big Crunch).',
     images: [
-      '/images/image.png',
+        '/images/image.png',
+        '/images/Uninflated.jpg'
     ],
     videos: [
       '/images/Balloon Expanding Closeup.mp4' 
@@ -45,7 +46,7 @@ export const projects: Project[] = [
   // 2. Black Hole Vision
   {
     slug: 'black-hole-vision',
-    title: 'Black Hole Vision',
+    title: 'Spaghettification',
     year: '2026',
     medium: 'Virtual Reality',
     dimensions: '7 x 6 x 12 inches',
@@ -123,13 +124,13 @@ export const projects: Project[] = [
         'Long exposure capturing the Geminid meteor shower streaks intersecting with star trails.',
         'Star trails rising above the silhouette of sand dunes, emphasizing the earth\'s horizon.',
         'Concentric star paths reflected in the still waters of Goose Lake.',
-        'Star movement captured over the equipment of fellow astrophotographers.'
+        'Star movement captured over the equipment of fellow astrophotographers at a star party.'
     ]
   },
   // 5. 3D Horizons
   {
     slug: '3d-horizons',
-    title: '3D Horizons',
+    title: 'Horizons',
     year: '2026',
     medium: 'Stereoscopic View-Master',
     dimensions: '6 x 10 x 3 inches',
@@ -213,19 +214,19 @@ export const projects: Project[] = [
   {
     slug: 'now-and-then',
     title: 'Now & Then',
-    year: '2026',
+    year: '2021-2026',
     medium: 'Archival Prints',
     dimensions: '20 x 30 inches each',
     weight: '1 lb',
     price: '$1,000.00 each',
     note: 'n/a',
     isSeries: true,
-    heroImage: '/images/Whirlpool.jpg',
+    heroImage: '/images/1-Whirlpool.png',
     quote: 'Folding time onto itself.',
-    description: 'In the Now and Then series, I explore the profound reality that astronomy is, at its core, the study of the past. Every photon captured by my lens carries a "history of travel," revealing not where a star is today, but where it was when its light began its journey across the void. To bridge the gap between human history and cosmic time, I use AI to generate contextual scenes of the specific historical era on Earth when that light first departed.',
+    description: 'In the Now & Then series, I explore the profound reality that astronomy is, at its core, the study of the past. Every photon captured by my lens carries a "history of travel," revealing not where a star is today, but where it was when its light began its journey across the void. To bridge the gap between human history and cosmic time, I use AI to generate contextual scenes of the specific historical era on Earth when that light first departed.',
     description2: 'By inserting the astronomical subject into these reconstructed landscapes and applying textures like fossilized rock, flaking parchment, or ancient stone etchings, I aim to materialize the "latency" of the universe, making the deep time of the cosmos tangible through the lens of human heritage.',
     images: [
-      '/images/Whirlpool.jpg',
+      '/images/1-Whirlpool.png',
       '/images/Andromeda.jpg',
       '/images/Eagle v2.jpg',
       '/images/Orion.jpg',
@@ -240,7 +241,7 @@ export const projects: Project[] = [
         'Orion',
         'Horsehead',
         'California',
-        'California (Detail)'
+        'Veil Nebula'
     ],
     imageDescriptions: [
         'Fossilised into the appearance of ancient rock, this image captures the galaxy as it looked 23 million years ago when the continents were only just settling into their modern positions.',
@@ -255,7 +256,7 @@ export const projects: Project[] = [
   // 9. Sculpture
   {
     slug: 'sculpture',
-    title: 'Sculpture Series',
+    title: 'Neighbors',
     year: '2026',
     medium: 'Cast Material',
     dimensions: 'Variable',
@@ -293,7 +294,7 @@ export const projects: Project[] = [
   // 10. CMB VR
   {
     slug: 'cmb-vr',
-    title: 'CMB VR',
+    title: 'CMB',
     year: '2026',
     medium: 'Virtual Reality',
     dimensions: '7 x 6 x 12 inches',
