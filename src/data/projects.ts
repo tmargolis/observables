@@ -207,7 +207,10 @@ export const projects: Project[] = [
     description2: 'Two rows of precision fans sandwich the fog stream, preventing it from dissipating. The result is a smooth, touchable plane of cloud that can be walked through.',
     images: [
       '/images/LaminarFlowMethod-1.png',
-      'https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=2074&auto=format&fit=crop'
+      '/images/EdgeSideView.png'
+    ],
+    videos: [
+      '/images/EdgePrevis.mp4' 
     ]
   },
   // 8. Now & Then
@@ -346,6 +349,9 @@ export const projects: Project[] = [
     images: [
       '/images/SkyWatcherTech.3.jpg',
       '/images/SkyWatcherTech.jpg'
+    ],
+    videos: [
+      '/images/SkyWatcher.mp4' 
     ]
   }
 ];
