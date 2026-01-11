@@ -53,12 +53,12 @@ export const projects: Project[] = [
     weight: '1 lb',
     price: '$5,000.00',
     note: 'Requires power',
-    heroImage: '/images/Spaghettification.jpg',
+    heroImage: '/images/Spaghettification.1.png',
     quote: 'The tidal force of the infinite.',
     description: 'Spaghettification visualizes the theoretical process where extreme tidal forces stretch matter vertically and squeeze it horizontally. This simulation invites the viewer to witness the distortion of an object as it approaches the event horizon.',
     description2: 'Based on Einstein’s theory of general relativity, the piece demonstrates how gravity overpowers molecular cohesion, elongating form into a long, thin strand just before it vanishes into the singularity.',
     images: [
-      '/images/Spaghettification.jpg',
+      '/images/Spaghettification.1.png',
       '/images/black-hole-vision-2.jpg'
     ]
   },
@@ -327,6 +327,25 @@ export const projects: Project[] = [
     images: [
       '/images/Redshifter.png',
       'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop'
+    ]
+  },
+  // 12. Sky Watcher
+  {
+    slug: 'sky-watcher',
+    title: 'Sky Watcher',
+    year: '2026',
+    medium: 'Mixed Media Light Sculpture (Arduino, Makeon Controller, LEDs, Vellum, Gold Acrylic)',
+    dimensions: '24 x 24 x 3 inches', // Estimated based on the JWST hexagon layout
+    weight: '8 lbs',
+    price: '$8,500.00',
+    note: 'Requires stable Wi-Fi connection for real-time astronomical data fetching. Wall-mounted installation.',
+    heroImage: '/images/Sky Watcher3.jpg',
+    quote: 'A terrestrial tether to cosmic clarity.',
+    description: 'Sky Watcher is a data-driven light sculpture that bridges the gap between the amateur astronomer and the atmosphere. Inspired by the honeycomb geometry of the James Webb Space Telescope, the piece serves as a living infographic for astrophotography conditions.',
+    description2: 'By pulling real-time data from astronomical APIs, the sculpture analyzes cloud cover, atmospheric seeing, transparency, and lunar phases. When the heavens align for a perfect night of deep-sky imaging, the piece illuminates through a vellum-diffused glow, signaling the ideal moment to bring out the telescope.',
+    images: [
+      '/images/SkyWatcherTech.3.jpg',
+      '/images/SkyWatcherTech.jpg'
     ]
   }
 ];
