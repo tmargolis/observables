@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
 import tailwindcss from '@tailwindcss/vite';
+import image from '@astrojs/image';
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,6 +10,7 @@ export default defineConfig({
   base: '/',                       // Leave as '/' since you use a custom domain
   outDir: 'dist',
   trailingSlash: 'always',
+  integrations: [image()],
   vite: {
     plugins: [tailwindcss()]
   }
