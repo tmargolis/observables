@@ -43,12 +43,48 @@ const { prevProject, nextProject } = Astro.props;
       </div>
     )}
 
-    <a href="/walkthrough/" class="hover:text-white hover:text-glow transition-all duration-300">Walkthrough</a>
-    <a href="/logistics/" id="nav-logistics" class="hidden hover:text-white hover:text-glow transition-all duration-300">Logistics</a>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-6">
+      <a href="/walkthrough/" class="hover:text-white hover:text-glow transition-all duration-300">Walkthrough</a>
+      <a href="/logistics/" id="nav-logistics" class="hidden hover:text-white hover:text-glow transition-all duration-300">Logistics</a>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div class="md:hidden relative">
+      <button id="mobile-menu-toggle" class="hover:text-white hover:text-glow transition-all duration-300">
+        NAV
+      </button>
+      <div id="mobile-menu" class="hidden absolute right-0 top-full mt-2 bg-black/95 backdrop-blur-xl border border-white/20 p-4 min-w-[180px] space-y-3">
+        <a href="/narrative/" class="block hover:text-white hover:text-glow transition-all duration-300">Narrative</a>
+        <a href="/works/" class="block hover:text-white hover:text-glow transition-all duration-300">Works</a>
+        <a href="/walkthrough/" class="block hover:text-white hover:text-glow transition-all duration-300">Walkthrough</a>
+        <a href="/logistics/" id="nav-logistics-mobile" class="hidden block hover:text-white hover:text-glow transition-all duration-300">Logistics</a>
+      </div>
+    </div>
   </div>
 </nav>
 
 <script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    
+    if (toggle && menu) {
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('hidden');
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.add('hidden');
+        }
+      });
+    }
+  });
+
   // Check Clerk auth status to show Logistics link
   window.addEventListener("load", async function () {
     const checkClerk = setInterval(async () => {
@@ -61,7 +97,9 @@ const { prevProject, nextProject } = Astro.props;
         // @ts-ignore
         if (window.Clerk.user) {
           const logisticsLink = document.getElementById('nav-logistics');
+          const logisticsLinkMobile = document.getElementById('nav-logistics-mobile');
           if (logisticsLink) logisticsLink.classList.remove('hidden');
+          if (logisticsLinkMobile) logisticsLinkMobile.classList.remove('hidden');
         }
       }
     }, 100);
