@@ -44,6 +44,11 @@ body {
   min-height: 100vh;
 }
 
+/* Link Styles */
+a {
+  text-decoration: none;
+}
+
 /* Scrollbar Hiding */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
