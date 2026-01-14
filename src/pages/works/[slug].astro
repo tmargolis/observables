@@ -62,9 +62,9 @@ const seriesImages = (() => {
       {project.isSeries ? (
         <div class="space-y-24">
           <!-- Intro Text -->
-          <div class="font-mono text-sm text-gray-300 leading-relaxed text-justify border-l border-white/20 pl-6">
-             <p>{project.description}</p>
-             <p class="mt-4">{project.description2}</p>
+          <div class="font-mono text-sm text-gray-300 leading-relaxed text-justify border-l border-white/20 pl-6 space-y-4">
+             {project.description.split('\n\n').map((para) => para.trim() && <p>{para.trim()}</p>)}
+             {project.description2 && project.description2.split('\n\n').map((para) => para.trim() && <p>{para.trim()}</p>)}
           </div>
 
           <!-- Context Image (Optional) -->
@@ -130,12 +130,19 @@ const seriesImages = (() => {
                </div>
              )
           ))}
+
+          <!-- Post-Images Text Section (Optional) -->
+          {project.description3 && (
+            <div class="font-mono text-sm text-gray-300 leading-relaxed text-justify border-l border-white/20 pl-6 space-y-4">
+              {project.description3.split('\n\n').map((para) => para.trim() && <p>{para.trim()}</p>)}
+            </div>
+          )}
         </div>
       ) : (
         /* Standard Single Work Layout */
         <>
           {/* Show video if it exists, otherwise conditionally show carousel */}
-          {(project.videos && project.videos.length > 0) || !['black-hole-vision', 'the-edge', '3d-horizons','cmb-vr','redshifter'].includes(project.slug) ? (
+          {(project.videos && project.videos.length > 0) || !['black-hole-vision', 'the-edge', '3d-horizons','cmb-vr','redshifter', 'audio-counter'].includes(project.slug) ? (
             <div class="relative w-full aspect-video bg-gray-900 overflow-x-auto snap-x snap-mandatory flex hide-scrollbar items-center justify-center">
                {/* Check if Video Exists for Main Display */}
                {project.videos && project.videos.length > 0 ? (
@@ -168,8 +175,8 @@ const seriesImages = (() => {
 
           <div class="space-y-24">
             <div class="flex flex-col md:flex-row gap-8 items-center">
-                <div class="flex-1 font-mono text-sm text-gray-300 leading-relaxed text-justify">
-                   <p>{project.description}</p>
+                <div class="flex-1 font-mono text-sm text-gray-300 leading-relaxed text-justify space-y-4">
+                   {project.description.split('\n\n').map((para) => para.trim() && <p>{para.trim()}</p>)}
                 </div>
                 <div class="flex-1">
                    {project.images[0] && <img src={project.images[0]} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.images[0]}')`} />}
@@ -177,13 +184,19 @@ const seriesImages = (() => {
             </div>
 
             <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
-                 <div class="flex-1 font-mono text-sm text-gray-300 leading-relaxed text-justify">
-                   <p>{project.description2}</p>
+                 <div class="flex-1 font-mono text-sm text-gray-300 leading-relaxed text-justify space-y-4">
+                   {project.description2.split('\n\n').map((para) => para.trim() && <p>{para.trim()}</p>)}
                 </div>
                 <div class="flex-1">
                    {project.images[2] ? <img src={project.images[2]} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.images[2]}')`} /> : project.images[1] ? <img src={project.images[1]} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.images[1]}')`} /> : <img src={project.heroImage} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.heroImage}')`} />}
                 </div>
             </div>
+
+            {project.description3 && (
+              <div class="font-mono text-sm text-gray-300 leading-relaxed text-justify space-y-4">
+                {project.description3.split('\n\n').map((para) => para.trim() && <p>{para.trim()}</p>)}
+              </div>
+            )}
           </div>
         </>
       )}
