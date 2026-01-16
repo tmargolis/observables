@@ -163,7 +163,7 @@ export const projects: Project[] = [
         'The Sun',
         'Asteroids',
         'Proxima Centauri',
-        'The Moon (Stereo)'
+        'The Moon'
     ],
     imageDescriptions: [
         '3D detail of nitrogen plains on Pluto featuring Jeff Bezos overseeing an Amazon-style automated mining plant.',
