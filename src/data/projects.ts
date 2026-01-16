@@ -166,8 +166,8 @@ export const projects: Project[] = [
         'The Moon (Stereo)'
     ],
     imageDescriptions: [
-        'Plutonian mountains where Neil deGrasse Tyson definitively red-markers a \'Planet\' sign out of existence.',
         '3D detail of nitrogen plains on Pluto featuring Jeff Bezos overseeing an Amazon-style automated mining plant.',
+        'Plutonian mountains where Neil deGrasse Tyson definitively red-markers a \'Planet\' sign out of existence.',
         'Irregular Martian moon where Elon Musk plants his flag from a Cybertruck rover.',
         'Capture of solar coronal ejections framing a giant, gold-lettered Trump billboard hovering in the plasma.',
         'Asteroid field featuring James Cameron searching for rare minerals in a vacuum-sealed Deepsea Challenger.',
