@@ -157,8 +157,8 @@ export const projects: Project[] = [
       '/images/moon.gif'
     ],
     imageTitles: [
-        'Pluto',
         'Pluto (Detail)',
+        'Pluto',
         'Phobos',
         'The Sun',
         'Asteroids',
