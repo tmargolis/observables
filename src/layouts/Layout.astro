@@ -19,9 +19,22 @@ const { title, prevProject, nextProject, hideFooter = false } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Observables Exhibition" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+		<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Observables</title>
+		
+		<!-- Open Graph / Social Media Preview -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={`${title} | Observables`} />
+		<meta property="og:description" content="Observables Exhibition - A convergence of space and time" />
+		<meta property="og:image" content={`${Astro.site}/images/og-image.jpg`} />
+		<meta property="og:url" content={`${Astro.site}${Astro.url.pathname}`} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:image" content={`${Astro.site}/images/og-image.jpg`} />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

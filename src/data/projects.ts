@@ -154,7 +154,7 @@ export const projects: Project[] = [
       '/images/Sun.jpg',
       '/images/Asteroids.jpeg',
       '/images/Proxima_Previs1.jpeg',
-      '/images/moon.gif'
+      '/images/moon.jpg'
     ],
     imageTitles: [
         'Pluto (Detail)',
