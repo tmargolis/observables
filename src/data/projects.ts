@@ -166,7 +166,7 @@ export const projects: Project[] = [
         'The Moon (Stereo)'
     ],
     imageDescriptions: [
-        'Plutonian mountains where Neil deGrasse Tyson definitively red-markers a ""Planet"" sign out of existence.',
+        'Plutonian mountains where Neil deGrasse Tyson definitively red-markers a \'Planet\' sign out of existence.',
         'Close-up stereoscopic detail of the texture of Pluto\'s surface.',
         '3D visualization of the Martian moon Phobos, revealing its irregular shape.',
         'Stereoscopic capture of solar surface activity and coronal ejections.',
