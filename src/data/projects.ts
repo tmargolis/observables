@@ -167,12 +167,12 @@ export const projects: Project[] = [
     ],
     imageDescriptions: [
         'Plutonian mountains where Neil deGrasse Tyson definitively red-markers a \'Planet\' sign out of existence.',
-        'Close-up stereoscopic detail of the texture of Pluto\'s surface.',
-        '3D visualization of the Martian moon Phobos, revealing its irregular shape.',
-        'Stereoscopic capture of solar surface activity and coronal ejections.',
-        '3D view of an asteroid field simulation.',
-        'Stereoscopic rendering of Proxima Centauri, our nearest star neighbor.',
-        '3D view of the lunar landscape showing depth of craters and maria.'
+        '3D detail of nitrogen plains on Pluto featuring Jeff Bezos overseeing an Amazon-style automated mining plant.',
+        'Irregular Martian moon where Elon Musk plants his flag from a Cybertruck rover.',
+        'Capture of solar coronal ejections framing a giant, gold-lettered Trump billboard hovering in the plasma.',
+        'Asteroid field featuring James Cameron searching for rare minerals in a vacuum-sealed Deepsea Challenger.',
+        'Our nearest star, Proxima Centauri, where Professor Avi Loeb scans for alien city lights with a handheld flashlight.',
+        'Lunar landscape view featuring Michelle Hanlon as a security guard protecting Apollo 11 behind a velvet rope.'
     ],
     description3: 'This piece is not a nostalgic novelty; it is the culmination of a career dedicated to the intersection of art, technology, and perception. For decades, Margolis has been a pioneer in immersive media, from his early co-invention of the Varrier™ auto-stereoscopic display to his creation of 3D artwork using PHSCologram technology. This View-Master project is a direct extension of that lifelong inquiry, refining large-scale concepts into a profoundly personal form.\n\nDuring his tenure at the Qualcomm Institute at UCSD, Margolis designed “discovery platforms” to translate vast scientific datasets into immersive, understandable experiences. This practice of turning complex information into compelling visual encounters is central to his work. The View-Master, then, becomes the perfect synthesis of his artistic and technological concerns: using a historical medium of mass visual consumption to frame cutting-edge scientific discovery and contemporary cultural mythology. In doing so, he forges a tangible, and critical, connection between human curiosity, commercial ambition, and the farthest reaches of our universe.'
   },
