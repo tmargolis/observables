@@ -1,4 +1,9 @@
 ---
+interface Props {
+  hasWalkthroughButton?: boolean;
+}
+
+const { hasWalkthroughButton = false } = Astro.props;
 ---
 
 <footer class="py-12 border-t border-white/5 bg-obs-black relative z-10">
@@ -7,6 +12,12 @@
     <div class="flex gap-8">
       <a href="/contact/" class="hover:text-white transition-colors">Inquire</a>
       <a href="/bio/" class="hover:text-white transition-colors">About the Artist</a>
+    </div>
+
+    <!-- Mobile: Walkthrough and Logistics -->
+    <div class="md:hidden flex gap-6">
+      {!hasWalkthroughButton && <a href="/walkthrough/" class="hover:text-white transition-colors">Walkthrough</a>}
+      <a href="/logistics/" id="nav-logistics-mobile" class="hidden hover:text-white transition-colors">Logistics</a>
     </div>
 
     <div id="auth-footer">
@@ -42,6 +53,9 @@
              window.Clerk.mountUserButton(userButtonDiv);
              authContainer.appendChild(userButtonDiv);
            }
+           // Show Logistics link on mobile if authenticated
+           const logisticsLinkMobile = document.getElementById('nav-logistics-mobile');
+           if (logisticsLinkMobile) logisticsLinkMobile.classList.remove('hidden');
         } else {
            // Ensure login button works
         }

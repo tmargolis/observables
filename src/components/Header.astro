@@ -2,88 +2,64 @@
 interface Props {
   prevProject?: { title: string; slug: string };
   nextProject?: { title: string; slug: string };
+  hideWalkthrough?: boolean;
 }
 
-const { prevProject, nextProject } = Astro.props;
+const { prevProject, nextProject, hideWalkthrough = false } = Astro.props;
 ---
 
-<nav class="fixed top-0 w-full z-40 p-6 flex justify-between items-center glass mix-blend-difference text-gray-300">
-  <!-- Left Side -->
-  <div class="flex items-center gap-8">
-    <a href="/" class="font-serif text-2xl tracking-tight text-white hover:text-glow transition-all duration-300">
-      OBSERVABLES
-    </a>
-    <div class="hidden md:flex gap-6 font-mono text-xs tracking-[0.2em] uppercase">
+<nav class="fixed top-0 w-full z-40 glass mix-blend-difference text-gray-300">
+  <!-- Mobile: Evenly spread links across full width -->
+  <div class="md:hidden w-full p-6 flex justify-between items-center font-mono text-xs tracking-[0.2em] uppercase">
+      <a href="/" class="font-serif text-2xl tracking-tight text-white hover:text-glow transition-all duration-300">
+        OBSERVABLES
+      </a>
       <a href="/narrative/" class="hover:text-white hover:text-glow transition-all duration-300">Artist Statement</a>
       <a href="/works/" class="hover:text-white hover:text-glow transition-all duration-300">Works</a>
-    </div>
+    <!-- Project Nav Arrows (Mobile - Right) -->
+    {prevProject && nextProject && (
+      <div class="flex gap-4">
+         <a href={`/works/${prevProject.slug}/`} class="hover:text-white hover:text-glow transition-all duration-300">&larr;</a>
+         <a href={`/works/${nextProject.slug}/`} class="hover:text-white hover:text-glow transition-all duration-300">&rarr;</a>
+      </div>
+    )}
   </div>
 
-  <!-- Center (Project Nav) -->
-  {prevProject && nextProject && (
-    <div class="hidden lg:flex gap-8 font-mono text-xs tracking-[0.2em] uppercase absolute left-1/2 transform -translate-x-1/2">
-       <a href={`/works/${prevProject.slug}/`} class="hover:text-white hover:text-glow transition-all duration-300 group">
-          &larr; <span class="hidden xl:inline">{prevProject.title}</span>
-       </a>
-       <span class="text-white/20">|</span>
-       <a href={`/works/${nextProject.slug}/`} class="hover:text-white hover:text-glow transition-all duration-300 group">
-          <span class="hidden xl:inline">{nextProject.title}</span> &rarr;
-       </a>
+  <!-- Desktop Layout -->
+  <div class="hidden md:flex w-full justify-between items-center">
+    <!-- Left Side -->
+    <div class="flex items-center gap-8">
+      <a href="/" class="font-serif text-2xl tracking-tight text-white hover:text-glow transition-all duration-300">
+        OBSERVABLES
+      </a>
+      <div class="flex gap-6 font-mono text-xs tracking-[0.2em] uppercase">
+        <a href="/narrative/" class="hover:text-white hover:text-glow transition-all duration-300">Artist Statement</a>
+        <a href="/works/" class="hover:text-white hover:text-glow transition-all duration-300">Works</a>
+      </div>
     </div>
-  )}
 
-  <!-- Right Side -->
-  <div class="flex items-center gap-6 font-mono text-xs tracking-[0.2em] uppercase">
-    <!-- Mobile/Tablet Project Nav (Simplified) -->
+    <!-- Center (Project Nav - Desktop Only) -->
     {prevProject && nextProject && (
-      <div class="flex lg:hidden gap-4 mr-4 border-r border-white/20 pr-4">
-         <a href={`/works/${prevProject.slug}/`} class="hover:text-white">&larr;</a>
-         <a href={`/works/${nextProject.slug}/`} class="hover:text-white">&rarr;</a>
+      <div class="hidden lg:flex gap-8 font-mono text-xs tracking-[0.2em] uppercase absolute left-1/2 transform -translate-x-1/2">
+         <a href={`/works/${prevProject.slug}/`} class="hover:text-white hover:text-glow transition-all duration-300 group">
+            &larr; <span class="hidden xl:inline">{prevProject.title}</span>
+         </a>
+         <span class="text-white/20">|</span>
+         <a href={`/works/${nextProject.slug}/`} class="hover:text-white hover:text-glow transition-all duration-300 group">
+            <span class="hidden xl:inline">{nextProject.title}</span> &rarr;
+         </a>
       </div>
     )}
 
-    <!-- Desktop Navigation -->
-    <div class="hidden md:flex items-center gap-6">
-      <a href="/walkthrough/" class="hover:text-white hover:text-glow transition-all duration-300">Walkthrough</a>
+    <!-- Right Side -->
+    <div class="flex items-center gap-6 font-mono text-xs tracking-[0.2em] uppercase">
+      {!hideWalkthrough && <a href="/walkthrough/" class="hover:text-white hover:text-glow transition-all duration-300">Walkthrough</a>}
       <a href="/logistics/" id="nav-logistics" class="hidden hover:text-white hover:text-glow transition-all duration-300">Logistics</a>
-    </div>
-
-    <!-- Mobile Dropdown -->
-    <div class="md:hidden relative z-[110]">
-      <button id="mobile-menu-toggle" class="hover:text-white hover:text-glow transition-all duration-300">
-        NAV
-      </button>
-      <div id="mobile-menu" class="hidden absolute right-0 top-full mt-4 bg-black/80 backdrop-blur-md border border-white/10 p-4 min-w-[150px] space-y-3 z-[110]">
-        <a href="/narrative/" class="block hover:text-white hover:text-glow transition-all duration-300">Narrative</a>
-        <a href="/works/" class="block hover:text-white hover:text-glow transition-all duration-300">Works</a>
-        <a href="/walkthrough/" class="block hover:text-white hover:text-glow transition-all duration-300">Walkthrough</a>
-        <a href="/logistics/" id="nav-logistics-mobile" class="hidden block hover:text-white hover:text-glow transition-all duration-300">Logistics</a>
-      </div>
     </div>
   </div>
 </nav>
 
 <script>
-  // Mobile menu toggle
-  document.addEventListener('DOMContentLoaded', function() {
-    const toggle = document.getElementById('mobile-menu-toggle');
-    const menu = document.getElementById('mobile-menu');
-    
-    if (toggle && menu) {
-      toggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        menu.classList.toggle('hidden');
-      });
-      
-      // Close menu when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!toggle.contains(e.target) && !menu.contains(e.target)) {
-          menu.classList.add('hidden');
-        }
-      });
-    }
-  });
-
   // Check Clerk auth status to show Logistics link
   window.addEventListener("load", async function () {
     const checkClerk = setInterval(async () => {

@@ -11,6 +11,8 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+const hideWalkthrough = true;
+const hasWalkthroughButton = true;
 
 const currentIndex = projects.findIndex(p => p.slug === project.slug);
 const prevProject = projects[currentIndex - 1] || projects[projects.length - 1];
@@ -32,7 +34,7 @@ const seriesImages = (() => {
 })();
 ---
 
-<Layout title={project.title} prevProject={prevProject} nextProject={nextProject}>
+<Layout title={project.title} prevProject={prevProject} nextProject={nextProject} hideWalkthrough={hideWalkthrough} hasWalkthroughButton={hasWalkthroughButton}>
   <!-- Hero -->
   <header class="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
     <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
@@ -274,6 +276,13 @@ const seriesImages = (() => {
       </div>
     </div>
 
+  </div>
+
+  <!-- Virtual Walkthrough Button -->
+  <div class="max-w-7xl mx-auto px-6 md:px-12 pb-8 flex justify-center">
+    <a href="/walkthrough/" class="border border-white/20 text-white font-mono text-xs px-8 py-4 uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-500">
+      Virtual Walkthrough
+    </a>
   </div>
 
   <!-- Project Navigation -->
