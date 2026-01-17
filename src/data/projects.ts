@@ -20,6 +20,7 @@ export interface Project {
   imageDescriptions?: string[]; // New field for specific descriptions per image
   contextImage?: string;
   contextCaption?: string;
+  watermarkedImages?: string[]; // Array of image paths that should show watermark
 }
 
 export const projects: Project[] = [
@@ -46,7 +47,8 @@ export const projects: Project[] = [
     ],
     videos: [
       '/images/Balloon Expanding Closeup.mp4' 
-    ]
+    ],
+    watermarkedImages: ['/images/bang.png', '/images/Uninflated.jpg', '/images/BigBang.jpg']
   },
   // 2. Black Hole Vision
   {
@@ -66,7 +68,8 @@ export const projects: Project[] = [
     images: [
       '/images/Spaghettification.1.png',
       '/images/black-hole-vision-2.jpg'
-    ]
+    ],
+    watermarkedImages: ['/images/Spaghettification.1.png', '/images/black-hole-vision-2.jpg']
   },
   // 3. Delayed Vision
   {
@@ -179,7 +182,8 @@ export const projects: Project[] = [
         'Our nearest star, Proxima Centauri, where Professor Avi Loeb scans for alien city lights with a handheld flashlight.',
         'Lunar landscape view featuring Michelle Hanlon as a security guard protecting Apollo 11 behind a velvet rope.'
     ],
-    description3: 'This piece is not a nostalgic novelty; it is the culmination of a career dedicated to the intersection of art, technology, and perception. For decades, Margolis has been a pioneer in immersive media, from his early co-invention of the Varrier™ auto-stereoscopic display to his creation of 3D artwork using PHSCologram technology. This View-Master project is a direct extension of that lifelong inquiry, refining large-scale concepts into a profoundly personal form.\n\nDuring his tenure at the Qualcomm Institute at UCSD, Margolis designed “discovery platforms” to translate vast scientific datasets into immersive, understandable experiences. This practice of turning complex information into compelling visual encounters is central to his work. The View-Master, then, becomes the perfect synthesis of his artistic and technological concerns: using a historical medium of mass visual consumption to frame cutting-edge scientific discovery and contemporary cultural mythology. In doing so, he forges a tangible, and critical, connection between human curiosity, commercial ambition, and the farthest reaches of our universe.'
+    description3: 'This piece is not a nostalgic novelty; it is the culmination of a career dedicated to the intersection of art, technology, and perception. For decades, Margolis has been a pioneer in immersive media, from his early co-invention of the Varrier™ auto-stereoscopic display to his creation of 3D artwork using PHSCologram technology. This View-Master project is a direct extension of that lifelong inquiry, refining large-scale concepts into a profoundly personal form.\n\nDuring his tenure at the Qualcomm Institute at UCSD, Margolis designed "discovery platforms" to translate vast scientific datasets into immersive, understandable experiences. This practice of turning complex information into compelling visual encounters is central to his work. The View-Master, then, becomes the perfect synthesis of his artistic and technological concerns: using a historical medium of mass visual consumption to frame cutting-edge scientific discovery and contemporary cultural mythology. In doing so, he forges a tangible, and critical, connection between human curiosity, commercial ambition, and the farthest reaches of our universe.',
+    watermarkedImages: ['/images/View-MasterReelSm.png', '/images/Pluto-Previs_1.jpg', '/images/Pluto_Tyson.jpg', '/images/Phobos-Previs_1.jpg', '/images/Sun.jpg', '/images/Asteroids.jpeg', '/images/Proxima_Previs1.jpeg', '/images/moon.jpg']
   },
   // 6. Audio Counter
   {
@@ -199,7 +203,8 @@ export const projects: Project[] = [
     images: [
       '/images/Audio_Stats.png',
       '/images/DeepField2.png'
-    ]
+    ],
+    watermarkedImages: ['/images/DeepField.png', '/images/Audio_Stats.png', '/images/DeepField2.png']
   },
   // 7. The Edge
   {
@@ -223,7 +228,8 @@ export const projects: Project[] = [
     ],
     videos: [
       '/images/EdgePrevis.mp4' 
-    ]
+    ],
+    watermarkedImages: ['/images/LaminarFlowMethod-1.png', '/images/EdgeSideView.png']
   },
   // 8. Now & Then
   {
@@ -267,7 +273,8 @@ export const projects: Project[] = [
         'Created with the aesthetic of a Migration Period tapestry, this silhouette shows the nebula as it existed 1,375 years ago while Germanic tribes reshaped Europe and the Gupta Empire thrived in India.',
         'Styled as a medieval illuminated manuscript, this image captures the nebula as it was 1,000 years ago, a moment when the Golden Age of Islam flourished.',
         'Presented as a weathered Roman fresco, this work depicts the nebula as it appeared 2,400 years ago during the rise of the Roman Republic and the life of Siddhartha Gautama in India.'
-    ]
+    ],
+    watermarkedImages: ['/images/Andromeda.jpg', '/images/Eagle v2.jpg', '/images/Orion.jpg', '/images/Horsehead and flame nebulas.png', '/images/California nebula.jpg', '/images/California nebula (1).jpg']
   },
   // 9. Sculpture
   {
@@ -306,7 +313,8 @@ export const projects: Project[] = [
         'Topographic relief of the lunar surface, allowing the viewer to touch the craters and maria.',
         'Sculptural interpretation of solar flares and surface activity, solidified in cast material.',
         'Physical visualization of an event horizon, giving form to the invisible pull of a black hole.'
-    ]
+    ],
+    watermarkedImages: ['/images/Spheroids-Previs1.png', '/images/Flats-Previs_1.png', '/images/Mars-Previs_1..png', '/images/MilkyWay-Previs_1.png', '/images/Moon-Previs_1.png', '/images/Sun-Previs_1.png', '/images/BlackHole-Previs_1.png']
   },
   // 10. CMB VR
   {
@@ -326,7 +334,8 @@ export const projects: Project[] = [
     images: [
       '/images/Screenshot_20260101-084458~2.png',
       'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'
-    ]
+    ],
+    watermarkedImages: ['/images/Screenshot_20260101-084458~2.png']
   },
   // 11. Redshifter
   {
@@ -347,7 +356,8 @@ export const projects: Project[] = [
     images: [
       '/images/Redshifter.png',
       'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop'
-    ]
+    ],
+    watermarkedImages: ['/images/Redshifter.png']
   },
   // 12. Sky Watcher
   {

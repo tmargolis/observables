@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { projects } from '../../data/projects';
+import Watermark from '../../components/Watermark.astro';
 
 export function getStaticPaths() {
   return projects.map(project => ({
@@ -42,6 +43,7 @@ const seriesImages = (() => {
     ) : (
         <img src={project.heroImage} alt={project.title} class="w-full h-full object-cover cursor-zoom-in" onclick={`openLightbox('${project.heroImage}')`} />
     )}
+    {project.watermarkedImages?.includes(project.heroImage) && <Watermark />}
     
     <div class="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-12 pb-24 pointer-events-none">
       {project.isSeries && (
@@ -76,6 +78,7 @@ const seriesImages = (() => {
                   alt={project.contextCaption || "Context View"}
                   onclick={`openLightbox('${project.contextImage}')`}
                 />
+                {project.watermarkedImages?.includes(project.contextImage) && <Watermark />}
                 {project.contextCaption && (
                    <span class="block font-mono text-[10px] text-gray-500 uppercase tracking-widest mt-2 text-center">{project.contextCaption}</span>
                 )}
@@ -97,13 +100,14 @@ const seriesImages = (() => {
                         <p>Archival pigment print on cotton rag.</p>
                       )}
                    </div>
-                   <div class="flex-1 w-full">
+                   <div class="flex-1 w-full relative">
                       <img 
                         src={img} 
                         class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" 
                         alt={`Series Variation ${i+1}`}
                         onclick={`openLightbox('${img}')`}
                       />
+                      {project.watermarkedImages?.includes(img) && <Watermark />}
                    </div>
                </div>
              ) : (
@@ -119,13 +123,14 @@ const seriesImages = (() => {
                         <p>Archival pigment print on cotton rag.</p>
                       )}
                    </div>
-                   <div class="flex-1 w-full">
+                   <div class="flex-1 w-full relative">
                       <img 
                         src={img} 
                         class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" 
                         alt={`Series Variation ${i+1}`} 
                         onclick={`openLightbox('${img}')`}
                       />
+                      {project.watermarkedImages?.includes(img) && <Watermark />}
                    </div>
                </div>
              )
@@ -161,13 +166,15 @@ const seriesImages = (() => {
                ) : (
                   /* Fallback to Image Carousel */
                   carouselImages.map((img, idx) => (
-                    <img 
-                      key={idx}
-                      src={img} 
-                      class="w-full h-full object-cover flex-shrink-0 snap-center cursor-zoom-in" 
-                      alt="Detail view" 
-                      onclick={`openLightbox('${img}')`}
-                    />
+                    <div key={idx} class="relative w-full h-full flex-shrink-0 snap-center">
+                      <img 
+                        src={img} 
+                        class="w-full h-full object-cover cursor-zoom-in" 
+                        alt="Detail view" 
+                        onclick={`openLightbox('${img}')`}
+                      />
+                      {project.watermarkedImages?.includes(img) && <Watermark />}
+                    </div>
                   ))
                )}
             </div>
@@ -178,8 +185,9 @@ const seriesImages = (() => {
                 <div class="flex-1 font-mono text-sm text-gray-300 leading-relaxed text-justify space-y-4">
                    {project.description.split('\n\n').map((para) => para.trim() && <p>{para.trim()}</p>)}
                 </div>
-                <div class="flex-1">
+                <div class="flex-1 relative">
                    {project.images[0] && <img src={project.images[0]} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.images[0]}')`} />}
+                   {project.watermarkedImages?.includes(project.images[0]) && <Watermark />}
                 </div>
             </div>
 
@@ -187,8 +195,23 @@ const seriesImages = (() => {
                  <div class="flex-1 font-mono text-sm text-gray-300 leading-relaxed text-justify space-y-4">
                    {project.description2.split('\n\n').map((para) => para.trim() && <p>{para.trim()}</p>)}
                 </div>
-                <div class="flex-1">
-                   {project.images[2] ? <img src={project.images[2]} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.images[2]}')`} /> : project.images[1] ? <img src={project.images[1]} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.images[1]}')`} /> : <img src={project.heroImage} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.heroImage}')`} />}
+                <div class="flex-1 relative">
+                   {project.images[2] ? (
+                     <>
+                       <img src={project.images[2]} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.images[2]}')`} />
+                       {project.watermarkedImages?.includes(project.images[2]) && <Watermark />}
+                     </>
+                   ) : project.images[1] ? (
+                     <>
+                       <img src={project.images[1]} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.images[1]}')`} />
+                       {project.watermarkedImages?.includes(project.images[1]) && <Watermark />}
+                     </>
+                   ) : (
+                     <>
+                       <img src={project.heroImage} class="w-full grayscale hover:grayscale-0 transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.heroImage}')`} />
+                       {project.watermarkedImages?.includes(project.heroImage) && <Watermark />}
+                     </>
+                   )}
                 </div>
             </div>
 
@@ -289,7 +312,14 @@ const seriesImages = (() => {
 
   <!-- Lightbox Modal -->
   <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl hidden flex items-center justify-center cursor-zoom-out p-4" onclick="closeLightbox()">
-     <img id="lightbox-img" src="" class="max-w-full max-h-full object-contain shadow-2xl shadow-black" />
+     <div class="relative max-w-full max-h-full">
+       <img id="lightbox-img" src="" class="max-w-full max-h-full object-contain shadow-2xl shadow-black" />
+       <div id="lightbox-watermark" class="absolute bottom-8 right-0 pointer-events-none hidden" style="transform: rotate(-45deg);">
+         <span class="font-mono text-s uppercase tracking-widest text-black" style="opacity: 0.3; text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 4px rgba(255, 255, 255, 0.6);">
+           AI Draft
+         </span>
+       </div>
+     </div>
      <button class="absolute top-6 right-6 text-white font-mono text-xl hover:text-indigo-400 z-10" onclick="event.stopPropagation(); closeLightbox()">[X]</button>
      <button id="lightbox-prev" class="absolute left-6 text-white font-mono text-2xl hover:text-indigo-400 opacity-50 hover:opacity-100 z-10" onclick="event.stopPropagation(); navigateImage(-1)">‹</button>
      <button id="lightbox-next" class="absolute right-6 mr-12 text-white font-mono text-2xl hover:text-indigo-400 opacity-50 hover:opacity-100 z-10" onclick="event.stopPropagation(); navigateImage(1)">›</button>
@@ -297,10 +327,22 @@ const seriesImages = (() => {
 
 </Layout>
 
-  <script define:vars={{ allImages: project.isSeries ? seriesImages : carouselImages, prevUrl: `/works/${prevProject.slug}/`, nextUrl: `/works/${nextProject.slug}/` }}>
+  <script define:vars={{ allImages: project.isSeries ? seriesImages : carouselImages, watermarkedImages: project.watermarkedImages || [], prevUrl: `/works/${prevProject.slug}/`, nextUrl: `/works/${nextProject.slug}/` }}>
     // Collect all clickable images from the page
     const images = allImages;
     let currentImageIndex = 0;
+
+    // Helper function to show/hide watermark in lightbox
+    function updateLightboxWatermark(imageSrc) {
+      const watermark = document.getElementById('lightbox-watermark');
+      if (watermark) {
+        if (watermarkedImages.includes(imageSrc)) {
+          watermark.classList.remove('hidden');
+        } else {
+          watermark.classList.add('hidden');
+        }
+      }
+    }
 
     // Lightbox Logic - make functions global for onclick handlers
     window.openLightbox = function(src) {
@@ -312,6 +354,7 @@ const seriesImages = (() => {
         if (currentImageIndex === -1) currentImageIndex = 0;
         
         img.src = src;
+        updateLightboxWatermark(src);
         lightbox.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
       }
@@ -335,7 +378,9 @@ const seriesImages = (() => {
       
       const img = document.getElementById('lightbox-img');
       if (img) {
-        img.src = images[currentImageIndex];
+        const newSrc = images[currentImageIndex];
+        img.src = newSrc;
+        updateLightboxWatermark(newSrc);
       }
     };
 
