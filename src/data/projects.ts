@@ -1,6 +1,7 @@
 export interface Project {
   slug: string;
   title: string;
+  status?: string;
   year: string;
   medium: string;
   dimensions: string;
@@ -26,6 +27,7 @@ export const projects: Project[] = [
   {
     slug: 'bang',
     title: 'Bang',
+    status: 'Work in Progress',
     year: '2026',
     medium: 'Kinetic Installation (Latex, Pneumatics)',
     dimensions: '48 x 24 x 24 inches',
