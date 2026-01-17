@@ -344,10 +344,14 @@ const seriesImages = (() => {
     // Swipe navigation for project pages
     let touchStartX = 0;
     let touchEndX = 0;
-    const swipeThreshold = 50; // Minimum swipe distance in pixels
+    let touchStartY = 0;
+    let touchEndY = 0;
+    const swipeThreshold = 150; // Minimum swipe distance in pixels (increased for less sensitivity)
+    const maxVerticalSwipe = 100; // Maximum vertical movement to consider it a horizontal swipe
 
     function handleSwipe() {
       const swipeDistance = touchEndX - touchStartX;
+      const verticalDistance = Math.abs(touchEndY - touchStartY);
       
       // Only navigate if lightbox is not open
       const lightbox = document.getElementById('lightbox');
@@ -355,7 +359,8 @@ const seriesImages = (() => {
         return; // Don't navigate between projects if lightbox is open
       }
 
-      if (Math.abs(swipeDistance) > swipeThreshold) {
+      // Require a more intentional horizontal swipe (not just a scroll)
+      if (Math.abs(swipeDistance) > swipeThreshold && verticalDistance < maxVerticalSwipe) {
         if (swipeDistance > 0) {
           // Swipe right - go to previous project
           window.location.href = prevUrl;
@@ -369,10 +374,12 @@ const seriesImages = (() => {
     // Touch event listeners for swipe navigation
     document.addEventListener('touchstart', function(e) {
       touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
     }, { passive: true });
 
     document.addEventListener('touchend', function(e) {
       touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
       handleSwipe();
     }, { passive: true });
 
