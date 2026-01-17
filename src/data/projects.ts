@@ -27,7 +27,7 @@ export const projects: Project[] = [
   {
     slug: 'bang',
     title: 'Bang',
-    status: 'Conceptual (awaiting fabrication)',
+    status: 'Aawaiting Fabrication',
     year: '2026',
     medium: 'Kinetic Installation (Latex, Pneumatics)',
     dimensions: '48 x 24 x 24 inches',
@@ -52,7 +52,7 @@ export const projects: Project[] = [
   {
     slug: 'black-hole-vision',
     title: 'Spaghettification',
-    status: 'Conceptual (awaiting fabrication)',
+    status: 'Awaiting Fabrication)',
     year: '2026',
     medium: 'Virtual Reality',
     dimensions: '7 x 6 x 12 inches',
@@ -185,7 +185,7 @@ export const projects: Project[] = [
   {
     slug: 'audio-counter',
     title: 'Audio Counter',
-    status: 'Conceptual (awaiting fabrication)',
+    status: 'Awaiting Fabrication)',
     year: '2026',
     medium: 'Generative Audio',
     dimensions: 'Variable',
@@ -205,7 +205,7 @@ export const projects: Project[] = [
   {
     slug: 'the-edge',
     title: 'The Edge',
-    status: 'Conceptual (awaiting fabrication)',
+    status: 'Awaiting Fabrication',
     year: '2026',
     medium: 'Laminar Flow Fog Screen',
     dimensions: '70 x 30 inches',
@@ -273,7 +273,7 @@ export const projects: Project[] = [
   {
     slug: 'sculpture',
     title: 'Neighbors',
-    status: 'Conceptual (awaiting fabrication)',
+    status: 'Awaiting Fabrication',
     year: '2026',
     medium: 'Cast Material',
     dimensions: 'Variable',
@@ -312,7 +312,7 @@ export const projects: Project[] = [
   {
     slug: 'cmb-vr',
     title: 'CMB',
-    status: 'Conceptual (awaiting fabrication)',
+    status: 'Awaiting Fabrication',
     year: '2026',
     medium: 'Virtual Reality',
     dimensions: '7 x 6 x 12 inches',
@@ -332,7 +332,7 @@ export const projects: Project[] = [
   {
     slug: 'redshifter',
     title: 'Redshifter',
-    status: 'Conceptual (awaiting fabrication)',
+    status: 'Awaiting Fabrication',
     year: '2026',
     medium: 'Room Installation',
     dimensions: '70 x 30 inches',
