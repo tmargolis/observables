@@ -212,11 +212,12 @@ const seriesImages = (() => {
           <span class="block text-gray-600 mb-1">Status</span>
           <span class="text-white">{project.status}</span>
         </div>
-        )}
+       ) : (
         <div>
           <span class="block text-gray-600 mb-1">Year</span>
           <span class="text-white">{project.year}</span>
         </div>
+        )}
         <div>
           <span class="block text-gray-600 mb-1">Medium</span>
           <span class="text-white">{project.medium}</span>
