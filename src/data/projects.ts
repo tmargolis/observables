@@ -27,7 +27,7 @@ export const projects: Project[] = [
   {
     slug: 'bang',
     title: 'Bang',
-    status: 'Work in Progress',
+    status: 'Conceptual (awaiting fabrication)',
     year: '2026',
     medium: 'Kinetic Installation (Latex, Pneumatics)',
     dimensions: '48 x 24 x 24 inches',
@@ -52,6 +52,7 @@ export const projects: Project[] = [
   {
     slug: 'black-hole-vision',
     title: 'Spaghettification',
+    status: 'Conceptual (awaiting fabrication)',
     year: '2026',
     medium: 'Virtual Reality',
     dimensions: '7 x 6 x 12 inches',
@@ -71,6 +72,7 @@ export const projects: Project[] = [
   {
     slug: 'delayed-vision',
     title: 'Delayed Vision',
+    status: 'Alpha Version',
     year: '2026',
     medium: 'Android app running on  Galaxy A9+ Tablet',
     dimensions: '11 x 7 x 1 inches',
@@ -103,7 +105,7 @@ export const projects: Project[] = [
   {
     slug: 'star-trails',
     title: 'Star Trails',
-    year: '2024-2026',
+    year: '2023-2024',
     medium: 'Archival Pigment Prints',
     dimensions: '20 x 30 inches each',
     weight: '5kg each',
@@ -138,6 +140,7 @@ export const projects: Project[] = [
   {
     slug: '3d-horizons',
     title: 'Horizons',
+    status: 'Work in Progress',
     year: '2026',
     medium: 'Stereoscopic View-Master',
     dimensions: '6 x 10 x 3 inches',
@@ -182,6 +185,7 @@ export const projects: Project[] = [
   {
     slug: 'audio-counter',
     title: 'Audio Counter',
+    status: 'Conceptual (awaiting fabrication)',
     year: '2026',
     medium: 'Generative Audio',
     dimensions: 'Variable',
@@ -201,6 +205,7 @@ export const projects: Project[] = [
   {
     slug: 'the-edge',
     title: 'The Edge',
+    status: 'Conceptual (awaiting fabrication)',
     year: '2026',
     medium: 'Laminar Flow Fog Screen',
     dimensions: '70 x 30 inches',
@@ -224,6 +229,7 @@ export const projects: Project[] = [
   {
     slug: 'now-and-then',
     title: 'Now & Then',
+    status: 'Work in Progress',
     year: '2021-2026',
     medium: 'Archival Prints',
     dimensions: '20 x 30 inches each',
@@ -267,6 +273,7 @@ export const projects: Project[] = [
   {
     slug: 'sculpture',
     title: 'Neighbors',
+    status: 'Conceptual (awaiting fabrication)',
     year: '2026',
     medium: 'Cast Material',
     dimensions: 'Variable',
@@ -305,6 +312,7 @@ export const projects: Project[] = [
   {
     slug: 'cmb-vr',
     title: 'CMB',
+    status: 'Conceptual (awaiting fabrication)',
     year: '2026',
     medium: 'Virtual Reality',
     dimensions: '7 x 6 x 12 inches',
@@ -324,6 +332,7 @@ export const projects: Project[] = [
   {
     slug: 'redshifter',
     title: 'Redshifter',
+    status: 'Conceptual (awaiting fabrication)',
     year: '2026',
     medium: 'Room Installation',
     dimensions: '70 x 30 inches',
@@ -344,6 +353,7 @@ export const projects: Project[] = [
   {
     slug: 'sky-watcher',
     title: 'Sky Watcher',
+    status: 'Work in Progress',
     year: '2026',
     medium: 'Mixed Media Light Sculpture (Arduino, Makeon Controller, LEDs, Vellum, Gold Acrylic)',
     dimensions: '24 x 24 x 3 inches', // Estimated based on the JWST hexagon layout
