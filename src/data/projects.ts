@@ -27,7 +27,7 @@ export const projects: Project[] = [
   {
     slug: 'bang',
     title: 'Bang',
-    status: 'Aawaiting Fabrication',
+    status: 'Awaiting Fabrication',
     year: '2026',
     medium: 'Kinetic Installation (Latex, Pneumatics)',
     dimensions: '48 x 24 x 24 inches',
