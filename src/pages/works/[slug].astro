@@ -341,6 +341,41 @@ const seriesImages = (() => {
     const images = allImages;
     let currentImageIndex = 0;
 
+    // Swipe navigation for project pages
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 50; // Minimum swipe distance in pixels
+
+    function handleSwipe() {
+      const swipeDistance = touchEndX - touchStartX;
+      
+      // Only navigate if lightbox is not open
+      const lightbox = document.getElementById('lightbox');
+      if (lightbox && !lightbox.classList.contains('hidden')) {
+        return; // Don't navigate between projects if lightbox is open
+      }
+
+      if (Math.abs(swipeDistance) > swipeThreshold) {
+        if (swipeDistance > 0) {
+          // Swipe right - go to previous project
+          window.location.href = prevUrl;
+        } else {
+          // Swipe left - go to next project
+          window.location.href = nextUrl;
+        }
+      }
+    }
+
+    // Touch event listeners for swipe navigation
+    document.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    document.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
     // Helper function to show/hide watermark in lightbox
     function updateLightboxWatermark(imageSrc) {
       const watermark = document.getElementById('lightbox-watermark');
