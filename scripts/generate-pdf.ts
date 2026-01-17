@@ -153,15 +153,13 @@ doc.fontSize(22)
 
 doc.moveDown(2);
 
-const narrativeText = `In a world of constant scrolling and fleeting images, we are asked to observe everything but rarely given the chance to truly see. Observables is an invitation to slow down, to look closer, and to experience reality in a new way. This project uses cutting-edge technology not just to create art, but to explore the very nature of how we perceive space, time, and substance in an age where our physical and digital lives have become inseparable.
+const narrativeText = `In a contemporary landscape defined by the "infinite scroll" and the synthetic hallucinations of Artificial Intelligence, the act of looking has become an act of suspicion. We inhabit an era of profound cynicism where the "observed" is no longer synonymous with the "real." As AI-generated imagery erodes our trust in the visual record, and political discourse seeks to reframe history through the lens of ideological belief, the concept of objective truth has become a contested site.
 
-At its heart, Observables blends "the rocky grit of physical existence with the gassy translucency of our digital lives." We create sensory paradoxes—experiences where solid objects and virtual light coexist, where data feels tangible, and where time seems to stretch and suspend. This is achieved through a unique fusion of astrophotography, physically sculpted objects, and interactive virtual and augmented reality environments. The work draws inspiration from early 20th-century art movements that shattered traditional perspectives—like the fragmented forms of Cubism and the dynamic motion of Futurism—and re-imagines them within the immersive, experiential canvases of today.
+The Observables Cycle responds to this crisis of consensus reality. It serves as a rigorous investigation into the wonders of the universe that science has empirically confirmed—the phenomena we can see, measure, and verify as objective fact. By centering the work on confirmed astronomical data and physical laws, the cycle creates a "topography of the verifiable" to counter the weightless, often deceptive nature of our digital lives.
 
-The goal is to create "artifacts from a future we haven't yet reached"—not just objects to be viewed, but immersive events to be lived. These encounters are designed to provoke wonder, disorientation, and a heightened awareness of your own perceptual apparatus. By asking you to engage for longer, to navigate these hybrid spaces, Observables challenges the rapid consumption of modern media. It aligns with the "slow art" movement, championing a deeper, more contemplative connection between you and the work, moving beyond a momentary glance to a durational encounter.
+At its core, the cycle explores the friction between the "rocky" grit of physical existence and the "gassy" translucency of our digital lives. Through a fusion of astrophotography, kinetic sculpture, and immersive virtuality, I create sensory paradoxes—artifacts from a future we haven't yet reached—that demand a slower, more intentional form of engagement. This "slow art" ethos is a direct intervention against the rapid-fire consumption and political weaponization of information.
 
-Observables is the culmination of Todd Margolis's decades-long career at the intersection of art, science, and technological innovation. His journey has been a consistent exploration of perception, from co-inventing foundational Virtual Reality hardware (the Varrier™ display) at the Electronic Visualization Laboratory to directing large-scale immersive data projects at UC San Diego's Qualcomm Institute. This new body of work builds directly on the legacy of pioneering projects like the immersive VR journey of ATLAS in silico; the Museum of Future Objects (MOFO), which used Augmented Reality to place speculative artifacts into our world; and his interventionist public art with the Manifest.AR collective. Each step has been a sustained inquiry into how emerging technologies can fundamentally reshape human experience.
-
-Ultimately, Observables is more than an exhibition. It is a perceptual laboratory. It provides the tools and the space to recalibrate your senses, question the nature of materiality, and see the world—and your place within it—differently.`;
+While this cycle maps the empirical world, it also establishes the foundation for a secondary inquiry: The Unobservables. Where the current cycle focuses on verified truth, the latter will explore the speculative theories and unconfirmed geometries of the cosmos—those spaces where science and belief still overlap. Together, these bodies of work interrogate the very nature of evidence, challenging the viewer to move beyond the cynical gaze and recalibrate their senses to the profound, indifferent realities of the material universe.`;
 
 addParagraphs(narrativeText, 10.5, colors.text, 'justify', 1.8);
 
@@ -207,7 +205,11 @@ projects.forEach((project, index) => {
     doc.fontSize(9)
        .font('Helvetica')
        .fillColor(colors.textMuted)
-       .text([`Year: ${project.year}`, `Medium: ${project.medium}`, project.dimensions && project.dimensions !== 'Variable' && project.dimensions !== 'N/A' ? `Dimensions: ${project.dimensions}` : ''].filter(Boolean).join('  |  '), {
+       .text([
+         project.status ? `Status: ${project.status}` : `Year: ${project.year}`,
+         `Medium: ${project.medium}`,
+         project.dimensions && project.dimensions !== 'Variable' && project.dimensions !== 'N/A' ? `Dimensions: ${project.dimensions}` : ''
+       ].filter(Boolean).join('  |  '), {
          width: pageWidth
        });
 
@@ -357,7 +359,7 @@ projects.forEach((project, index) => {
        .fillColor(colors.textMuted);
     
     const details = [];
-    details.push(`Year: ${project.year}`);
+    details.push(project.status ? `Status: ${project.status}` : `Year: ${project.year}`);
     details.push(`Medium: ${project.medium}`);
     if (project.dimensions && project.dimensions !== 'Variable' && project.dimensions !== 'N/A') {
       details.push(`Dimensions: ${project.dimensions}`);
