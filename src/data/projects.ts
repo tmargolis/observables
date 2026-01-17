@@ -52,7 +52,7 @@ export const projects: Project[] = [
   {
     slug: 'black-hole-vision',
     title: 'Spaghettification',
-    status: 'Awaiting Fabrication)',
+    status: 'Awaiting Fabrication',
     year: '2026',
     medium: 'Virtual Reality',
     dimensions: '7 x 6 x 12 inches',
@@ -185,7 +185,7 @@ export const projects: Project[] = [
   {
     slug: 'audio-counter',
     title: 'Audio Counter',
-    status: 'Awaiting Fabrication)',
+    status: 'Awaiting Fabrication',
     year: '2026',
     medium: 'Generative Audio',
     dimensions: 'Variable',
