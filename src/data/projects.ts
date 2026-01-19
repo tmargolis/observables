@@ -188,7 +188,7 @@ export const projects: Project[] = [
   // 6. Audio Counter
   {
     slug: 'audio-counter',
-    title: 'Audio Counter',
+    title: 'Census',
     status: 'Alpha Version',
     year: '2026',
     medium: 'Generative Audio',
