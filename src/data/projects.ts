@@ -157,12 +157,12 @@ export const projects: Project[] = [
     description2: 'Yet, these pristine scientific vistas are not left uninhabited. In a provocative artistic intervention, Margolis disrupts the purity of the data by embedding contemporary avatars of extra-planetary ambition within the scenes. With the simple, mechanical click of the viewer’s lever, one might encounter the icy mountains of Pluto, only to find them scaled by a diminutive Jeff Bezos; turn the wheel again, and Elon Musk is revealed surveying the dust-strewn craters of Mars\'s moon Phobos.\n\nThe result is an intimate, personal encounter with the sublime, complicated by the uncanny presence of human ego. The artwork collapses the immense distances of space, placing both the grandeur of cosmic phenomena—like the explosive energy of a Solar Coronal Mass Ejection—and the caricatures of modern corporate spacefarers directly into your hands. It transforms abstract data into a visceral experience, inviting a private communion with sights otherwise inaccessible to humankind, while simultaneously questioning who gets to claim dominion over them.',
     images: [
       '/images/Pluto-Previs_1.jpg',
-      '/images/Pluto_Tyson.jpg',
+      '/images/PlutoPrevis3.jpg',
       '/images/Phobos-Previs_1.jpg',
       '/images/Sun.jpg',
       '/images/Asteroids.jpeg',
       '/images/Proxima_Previs1.jpeg',
-      '/images/moon.jpg'
+      '/images/Horizons-moon.jpg'
     ],
     imageTitles: [
         'Pluto (Detail)',
@@ -180,16 +180,16 @@ export const projects: Project[] = [
         'Capture of solar coronal ejections framing a giant, gold-lettered Trump billboard hovering in the plasma.',
         'Asteroid field featuring James Cameron searching for rare minerals in a vacuum-sealed Deepsea Challenger.',
         'Our nearest star, Proxima Centauri, where Professor Avi Loeb scans for alien city lights with a handheld flashlight.',
-        'Lunar landscape view featuring Michelle Hanlon as a security guard protecting Apollo 11 behind a velvet rope.'
+        'Lunar view featuring Michelle Hanlon as a security guard protecting Apollo 11 behind a velvet rope.'
     ],
     description3: 'This piece is not a nostalgic novelty; it is the culmination of a career dedicated to the intersection of art, technology, and perception. For decades, Margolis has been a pioneer in immersive media, from his early co-invention of the Varrier™ auto-stereoscopic display to his creation of 3D artwork using PHSCologram technology. This View-Master project is a direct extension of that lifelong inquiry, refining large-scale concepts into a profoundly personal form.\n\nDuring his tenure at the Qualcomm Institute at UCSD, Margolis designed "discovery platforms" to translate vast scientific datasets into immersive, understandable experiences. This practice of turning complex information into compelling visual encounters is central to his work. The View-Master, then, becomes the perfect synthesis of his artistic and technological concerns: using a historical medium of mass visual consumption to frame cutting-edge scientific discovery and contemporary cultural mythology. In doing so, he forges a tangible, and critical, connection between human curiosity, commercial ambition, and the farthest reaches of our universe.',
-    watermarkedImages: ['/images/View-MasterReelSm.png', '/images/Pluto-Previs_1.jpg', '/images/Pluto_Tyson.jpg', '/images/Phobos-Previs_1.jpg', '/images/Sun.jpg', '/images/Asteroids.jpeg', '/images/Proxima_Previs1.jpeg', '/images/moon.jpg']
+    watermarkedImages: ['/images/View-MasterReelSm.png', '/images/Pluto-Previs_1.jpg', '/images/PlutoPrevis3.jpg', '/images/Phobos-Previs_1.jpg', '/images/Sun.jpg', '/images/Asteroids.jpeg', '/images/Proxima_Previs1.jpeg', '/images/Horizons-moon.jpg']
   },
   // 6. Audio Counter
   {
     slug: 'audio-counter',
     title: 'Audio Counter',
-    status: 'Awaiting Fabrication',
+    status: 'Alpha Version',
     year: '2026',
     medium: 'Generative Audio',
     dimensions: 'Variable',
@@ -197,14 +197,16 @@ export const projects: Project[] = [
     note: 'Stereo Speakers',
     heroImage: '/images/DeepField.png',
     quote: 'The sound of 200 billion trillion.',
-    description: 'This audacious auditory experiment invites you to listen to the immense scale of the observable universe. Our cosmos holds an estimated 2 trillion galaxies, each teeming with hundreds of billions of stars; to simply count them would take an astonishing 6.3 quadrillion years. This artwork transforms that incomprehensible number into a tangible, sensory experience.',
+    description: 'This auditory experiment invites you to listen to the immense scale of the observable universe. Our cosmos holds an estimated 2 trillion galaxies, each teeming with hundreds of billions of stars; to simply count them would take an astonishing 6.3 quadrillion years. This artwork transforms that incomprehensible number into a tangible, sensory experience.',
     description2: 'Using generative algorithms, the piece sonifies this cosmic data, creating a vast soundscape where the star count of each galaxy is represented by a specific sound frequency. The result is a mesmerizing and overwhelming "chorus of the cosmos" that plunges the listener into a profound, visceral encounter with the immeasurable. By shifting our perception of scale from a visual map to an aural immersion, the work invites us to confront the limits of human perception. Can the ear truly differentiate two trillion distinct tones, or will they converge into an undifferentiated hum—a sonic "white noise" of the universe? This central paradox evokes a simultaneous sense of awe and insignificance, forcing a confrontation with humanity\'s place within an unfathomable expanse.',
     description3: 'This piece is a natural culmination of artist Todd Margolis\'s two-decade career exploring the intersection of art, technology, and large-scale data. From developing immersive discovery platforms for scientific research in Virtual Reality to his academic work collaborating with musicians on "Scalable Auditory Data Signatures," Margolis has consistently sought to translate vast, abstract information into meaningful human experiences. Here, he extends that inquiry to the ultimate dataset: the cosmos itself. The artwork resonates deeply with the mission of Observables, which explores the contrast between the ancient, enduring universe and the fleeting, ephemeral nature of the digital sound attempting to capture it. The work becomes an artifact from a future we haven\'t yet reached—an endless, self-organizing sonic tapestry that embodies our ambition to comprehend the incomprehensible, rendering the sublime audible for the very first time.',
     images: [
       '/images/Audio_Stats.png',
-      '/images/DeepField2.png'
+      '/images/gsmf.gif'
     ],
-    watermarkedImages: ['/images/DeepField.png', '/images/Audio_Stats.png', '/images/DeepField2.png']
+    videos: [
+      '/images/audio_counter_200ST.mp4' 
+    ]
   },
   // 7. The Edge
   {
