@@ -185,28 +185,26 @@ export const projects: Project[] = [
     description3: 'This piece is not a nostalgic novelty; it is the culmination of a career dedicated to the intersection of art, technology, and perception. For decades, Margolis has been a pioneer in immersive media, from his early co-invention of the Varrier™ auto-stereoscopic display to his creation of 3D artwork using PHSCologram technology. This View-Master project is a direct extension of that lifelong inquiry, refining large-scale concepts into a profoundly personal form.\n\nDuring his tenure at the Qualcomm Institute at UCSD, Margolis designed "discovery platforms" to translate vast scientific datasets into immersive, understandable experiences. This practice of turning complex information into compelling visual encounters is central to his work. The View-Master, then, becomes the perfect synthesis of his artistic and technological concerns: using a historical medium of mass visual consumption to frame cutting-edge scientific discovery and contemporary cultural mythology. In doing so, he forges a tangible, and critical, connection between human curiosity, commercial ambition, and the farthest reaches of our universe.',
     watermarkedImages: ['/images/View-MasterReelSm.png', '/images/Pluto-Previs_1.jpg', '/images/PlutoPrevis3.jpg', '/images/Phobos-Previs_1.jpg', '/images/Sun.jpg', '/images/Asteroids.jpeg', '/images/Proxima_Previs1.jpeg', '/images/Horizons-moon.jpg']
   },
-  // 6. Census
+  // 6. Metronome
   {
     slug: 'audio-counter',
-    title: 'Census',
-    status: 'Alpha Version',
+    title: 'Metronome',
+    status: 'Awaiting Fabrication',
     year: '2026',
     medium: 'Generative Audio',
     dimensions: 'Variable',
     weight: 'N/A',
     note: 'Stereo Speakers',
-    heroImage: '/images/DeepField.png',
-    quote: 'The sound of 200 billion trillion.',
-    description: 'This auditory experiment invites you to listen to the immense scale of the observable universe. Our cosmos holds an estimated 2 trillion galaxies, each teeming with hundreds of billions of stars; to simply count them would take an astonishing 6.3 quadrillion years. This artwork transforms that incomprehensible number into a tangible, sensory experience.',
-    description2: 'Using generative algorithms, the piece sonifies this cosmic data, creating a vast soundscape where the star count of each galaxy is represented by a specific sound frequency. The result is a mesmerizing and overwhelming "chorus of the cosmos" that plunges the listener into a profound, visceral encounter with the immeasurable. By shifting our perception of scale from a visual map to an aural immersion, the work invites us to confront the limits of human perception. Can the ear truly differentiate two trillion distinct tones, or will they converge into an undifferentiated hum—a sonic "white noise" of the universe? This central paradox evokes a simultaneous sense of awe and insignificance, forcing a confrontation with humanity\'s place within an unfathomable expanse.',
-    description3: 'This piece is a natural culmination of artist Todd Margolis\'s two-decade career exploring the intersection of art, technology, and large-scale data. From developing immersive discovery platforms for scientific research in Virtual Reality to his academic work collaborating with musicians on "Scalable Auditory Data Signatures," Margolis has consistently sought to translate vast, abstract information into meaningful human experiences. Here, he extends that inquiry to the ultimate dataset: the cosmos itself. The artwork resonates deeply with the mission of Observables, which explores the contrast between the ancient, enduring universe and the fleeting, ephemeral nature of the digital sound attempting to capture it. The work becomes an artifact from a future we haven\'t yet reached—an endless, self-organizing sonic tapestry that embodies our ambition to comprehend the incomprehensible, rendering the sublime audible for the very first time.',
+    heroImage: '/images/pulsar.jpg',
+    quote: 'A chorus of the cosmos.',
+    description: 'METRONOME is an auditory experiment that invites you to listen to—and physically feel—the immense scale of the observable universe. While our cosmos holds an estimated two trillion galaxies, it is also governed by a precision that rivals the finest clockwork. This artwork transforms the incomprehensible magnitude of celestial time into a tangible, visceral encounter.',
+    description2: 'The installation functions as a dual-layered cosmic timepiece. Every second, the piece triggers the audible sonification of a unique pulsar—the "cosmic metronomes" of the universe. These spinning neutron stars are the most stable timekeepers in existence, and here, they provide a persistent 1Hz heartbeat for the room. Listeners hear a constantly evolving "chorus of the cosmos," ranging from the sharp, metallic clicks of millisecond pulsars to the hollow, percussive thumps of ancient stars.\n\nThis steady rhythmic immersion is punctuated every hour by a "Catastrophic Event." The pulsar clock falls into a heavy, expectant silence as the room is overtaken by raw, low-frequency data from a LIGO binary black hole merger. By time-stretching these sub-second events into thirty-second swells, METRONOME shifts the experience from the ears to the bones. Using high-output subwoofers, the merger becomes a pressure event—a literal sensation of spacetime being compressed and stretched. It is the sublime rendered audible and tactile for the first time.',
+    description3: 'This piece is a natural culmination of artist Todd Margolis\'s two-decade career exploring the intersection of art, technology, and large-scale data. From developing immersive discovery platforms for scientific research in Virtual Reality to his academic work on "Scalable Auditory Data Signatures," Margolis has consistently sought to translate vast, abstract information into meaningful human experiences. Here, he extends that inquiry to the ultimate dataset: the fundamental fabric of spacetime.\n\nThe artwork resonates deeply with the mission of Observables, exploring the contrast between the ancient, enduring universe and the fleeting, ephemeral nature of the digital sound attempting to capture it. METRONOME becomes an artifact from a future we haven\'t yet reached—a self-organizing sonic tapestry that embodies our ambition to comprehend the incomprehensible, forcing a confrontation with humanity\'s place within an unfathomable expanse.',
     images: [
-      '/images/Audio_Stats.png',
+      '/images/gravitationWave.jpg',
       '/images/gsmf.gif'
     ],
-    videos: [
-      '/images/audio_counter_200ST.mp4' 
-    ]
+    watermarkedImages: ['/images/Audio_Stats.png', '/images/gsmf.gif']
   },
   // 7. The Edge
   {
