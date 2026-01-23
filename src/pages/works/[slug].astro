@@ -329,7 +329,6 @@ const seriesImages = (() => {
          </span>
        </div>
      </div>
-     <button class="absolute top-6 right-6 text-white font-mono text-xl hover:text-indigo-400 z-10" onclick="event.stopPropagation(); closeLightbox()">[X]</button>
      <button id="lightbox-prev" class="absolute left-6 text-white font-mono text-2xl hover:text-indigo-400 opacity-50 hover:opacity-100 z-10" onclick="event.stopPropagation(); navigateImage(-1)">‹</button>
      <button id="lightbox-next" class="absolute right-6 mr-12 text-white font-mono text-2xl hover:text-indigo-400 opacity-50 hover:opacity-100 z-10" onclick="event.stopPropagation(); navigateImage(1)">›</button>
   </div>
@@ -392,6 +391,8 @@ const seriesImages = (() => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('in-view');
+            } else {
+              entry.target.classList.remove('in-view');
             }
           });
         }, { rootMargin: '0px 0px -15% 0px', threshold: 0.75 });
