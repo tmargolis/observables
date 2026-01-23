@@ -383,19 +383,26 @@ const seriesImages = (() => {
       handleSwipe();
     }, { passive: true });
 
-    // Scroll-reveal (mobile only): transition images from grayscale to color as they scroll into view
+    // Scroll-reveal (mobile only): grayscale by default; start observing only after first scroll so initial view stays B&W
     document.addEventListener('DOMContentLoaded', function() {
       const isMobile = window.matchMedia('(max-width: 768px)').matches;
       const revealEls = document.querySelectorAll('.scroll-reveal-color');
-      if (isMobile) {
+      if (isMobile && revealEls.length) {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('in-view');
             }
           });
-        }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
-        revealEls.forEach((el) => observer.observe(el));
+        }, { rootMargin: '0px 0px -15% 0px', threshold: 0.5 });
+
+        const startObserving = () => {
+          revealEls.forEach((el) => observer.observe(el));
+          window.removeEventListener('scroll', startObserving);
+          window.removeEventListener('touchmove', startObserving);
+        };
+        window.addEventListener('scroll', startObserving, { passive: true, once: true });
+        window.addEventListener('touchmove', startObserving, { passive: true, once: true });
       }
     });
 
