@@ -78,7 +78,7 @@ const seriesImages = (() => {
                   src={project.contextImage} 
                   class="w-full scroll-reveal-color transition-all duration-500 cursor-zoom-in" 
                   alt={project.contextCaption || "Context View"}
-                  onclick={`openLightbox('${project.contextImage}')`}
+                  onclick={`handleImageClick(event, '${project.contextImage}')`}
                 />
                 {project.watermarkedImages?.includes(project.contextImage) && <Watermark />}
                 {project.contextCaption && (
@@ -107,7 +107,7 @@ const seriesImages = (() => {
                         src={img} 
                         class="w-full scroll-reveal-color transition-all duration-500 cursor-zoom-in" 
                         alt={`Series Variation ${i+1}`}
-                        onclick={`openLightbox('${img}')`}
+                        onclick={`handleImageClick(event, '${img}')`}
                       />
                       {project.watermarkedImages?.includes(img) && <Watermark />}
                    </div>
@@ -130,7 +130,7 @@ const seriesImages = (() => {
                         src={img} 
                         class="w-full scroll-reveal-color transition-all duration-500 cursor-zoom-in" 
                         alt={`Series Variation ${i+1}`} 
-                        onclick={`openLightbox('${img}')`}
+                        onclick={`handleImageClick(event, '${img}')`}
                       />
                       {project.watermarkedImages?.includes(img) && <Watermark />}
                    </div>
@@ -188,7 +188,7 @@ const seriesImages = (() => {
                    {project.description.split('\n\n').map((para) => para.trim() && <p>{para.trim()}</p>)}
                 </div>
                 <div class="flex-1 relative">
-                   {project.images[0] && <img src={project.images[0]} class="w-full scroll-reveal-color transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.images[0]}')`} />}
+                   {project.images[0] && <img src={project.images[0]} class="w-full scroll-reveal-color transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`handleImageClick(event, '${project.images[0]}')`} />}
                    {project.watermarkedImages?.includes(project.images[0]) && <Watermark />}
                 </div>
             </div>
@@ -200,17 +200,17 @@ const seriesImages = (() => {
                 <div class="flex-1 relative">
                    {project.images[2] ? (
                      <>
-                       <img src={project.images[2]} class="w-full scroll-reveal-color transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.images[2]}')`} />
+                       <img src={project.images[2]} class="w-full scroll-reveal-color transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`handleImageClick(event, '${project.images[2]}')`} />
                        {project.watermarkedImages?.includes(project.images[2]) && <Watermark />}
                      </>
                    ) : project.images[1] ? (
                      <>
-                       <img src={project.images[1]} class="w-full scroll-reveal-color transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.images[1]}')`} />
+                       <img src={project.images[1]} class="w-full scroll-reveal-color transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`handleImageClick(event, '${project.images[1]}')`} />
                        {project.watermarkedImages?.includes(project.images[1]) && <Watermark />}
                      </>
                    ) : (
                      <>
-                       <img src={project.heroImage} class="w-full scroll-reveal-color transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`openLightbox('${project.heroImage}')`} />
+                       <img src={project.heroImage} class="w-full scroll-reveal-color transition-all duration-500 cursor-zoom-in" alt="Detail" onclick={`handleImageClick(event, '${project.heroImage}')`} />
                        {project.watermarkedImages?.includes(project.heroImage) && <Watermark />}
                      </>
                    )}
@@ -383,18 +383,30 @@ const seriesImages = (() => {
       handleSwipe();
     }, { passive: true });
 
-    // Scroll-reveal: transition images from grayscale to color as they enter view
+    // Scroll-reveal (mobile only): transition images from grayscale to color as they scroll into view
     document.addEventListener('DOMContentLoaded', function() {
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
       const revealEls = document.querySelectorAll('.scroll-reveal-color');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-          }
-        });
-      }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
-      revealEls.forEach((el) => observer.observe(el));
+      if (isMobile) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+            }
+          });
+        }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+        revealEls.forEach((el) => observer.observe(el));
+      }
     });
+
+    // Desktop: reveal color on click. Mobile: just open lightbox (scroll handles reveal).
+    window.handleImageClick = function(event, src) {
+      const isDesktop = window.matchMedia('(hover: hover)').matches;
+      if (isDesktop && event.currentTarget) {
+        event.currentTarget.classList.add('in-view');
+      }
+      window.openLightbox(src);
+    };
 
     // Helper function to show/hide watermark in lightbox
     function updateLightboxWatermark(imageSrc) {

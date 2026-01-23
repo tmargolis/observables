@@ -37,8 +37,7 @@
     filter: grayscale(100%);
     transition: filter 0.6s ease;
   }
-  .scroll-reveal-color.in-view,
-  .scroll-reveal-color:hover {
+  .scroll-reveal-color.in-view {
     filter: grayscale(0);
   }
 }
