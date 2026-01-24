@@ -32,6 +32,10 @@ const seriesImages = (() => {
     ? [project.contextImage, ...baseImages]
     : baseImages;
 })();
+
+const isStarTrails = project.slug === 'star-trails';
+const starTrailsModelBases = ['geminid', 'dunes', 'goose-lake', 'wildcat'];
+const getStarTrailsModelBase = (index) => starTrailsModelBases[index] || `star-trails-${index + 1}`;
 ---
 
 <Layout title={project.title} prevProject={prevProject} nextProject={nextProject} hideWalkthrough={hideWalkthrough} hasWalkthroughButton={hasWalkthroughButton}>
@@ -101,6 +105,19 @@ const seriesImages = (() => {
                       ) : (
                         <p>Archival pigment print on cotton rag.</p>
                       )}
+                      {isStarTrails && (
+                        <model-viewer
+                          src={`/models/${getStarTrailsModelBase(i)}.glb`}
+                          ios-src={`/models/${getStarTrailsModelBase(i)}.usdz`}
+                          ar
+                          ar-modes="webxr scene-viewer quick-look"
+                          camera-controls
+                          alt="A 3D model of my artwork">
+                          <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+                            View in your space
+                          </button>
+                        </model-viewer>
+                      )}
                    </div>
                    <div class="flex-1 w-full relative">
                       <img 
@@ -123,6 +140,19 @@ const seriesImages = (() => {
                         <p>{project.imageDescriptions[i]}</p>
                       ) : (
                         <p>Archival pigment print on cotton rag.</p>
+                      )}
+                      {isStarTrails && (
+                        <model-viewer
+                          src={`/models/${getStarTrailsModelBase(i)}.glb`}
+                          ios-src={`/models/${getStarTrailsModelBase(i)}.usdz`}
+                          ar
+                          ar-modes="webxr scene-viewer quick-look"
+                          camera-controls
+                          alt="A 3D model of my artwork">
+                          <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+                            View in your space
+                          </button>
+                        </model-viewer>
                       )}
                    </div>
                    <div class="flex-1 w-full relative">
