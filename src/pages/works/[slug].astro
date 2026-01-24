@@ -107,6 +107,7 @@ const getStarTrailsModelBase = (index) => starTrailsModelBases[index] || `star-t
                       )}
                       {isStarTrails && (
                         <model-viewer
+                          class="model-viewer-frame"
                           src={`/models/${getStarTrailsModelBase(i)}.glb`}
                           ios-src={`/models/${getStarTrailsModelBase(i)}.usdz`}
                           ar
@@ -143,6 +144,7 @@ const getStarTrailsModelBase = (index) => starTrailsModelBases[index] || `star-t
                       )}
                       {isStarTrails && (
                         <model-viewer
+                          class="model-viewer-frame"
                           src={`/models/${getStarTrailsModelBase(i)}.glb`}
                           ios-src={`/models/${getStarTrailsModelBase(i)}.usdz`}
                           ar

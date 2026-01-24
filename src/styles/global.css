@@ -42,6 +42,15 @@
   }
 }
 
+model-viewer.model-viewer-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: block;
+  position: relative;
+  background: #0b0b0b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 /* Base Styles */
 body {
   background-color: var(--color-obs-black);
