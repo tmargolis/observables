@@ -36,6 +36,22 @@ const seriesImages = (() => {
 const isStarTrails = project.slug === 'star-trails';
 const starTrailsModelBases = ['geminid', 'dunes', 'goose-lake', 'wildcat'];
 const getStarTrailsModelBase = (index) => starTrailsModelBases[index] || `star-trails-${index + 1}`;
+
+const isNowAndThen = project.slug === 'now-and-then';
+const nowAndThenModelBases = ['whirlpool', 'andromeda', 'eagle', 'orion', 'horsehead', 'california', 'veil-nebula'];
+const getNowAndThenModelBase = (index) => nowAndThenModelBases[index] || `now-and-then-${index + 1}`;
+
+// For testing: only show Whirlpool (index 0) for Now & Then
+const hasModelViewer = (index) => {
+  if (isStarTrails) return true;
+  if (isNowAndThen) return index === 0; // Only show for first image (Whirlpool) during testing
+  return false;
+};
+const getModelBase = (index) => {
+  if (isStarTrails) return getStarTrailsModelBase(index);
+  if (isNowAndThen) return getNowAndThenModelBase(index);
+  return '';
+};
 ---
 
 <Layout title={project.title} prevProject={prevProject} nextProject={nextProject} hideWalkthrough={hideWalkthrough} hasWalkthroughButton={hasWalkthroughButton}>
@@ -105,11 +121,11 @@ const getStarTrailsModelBase = (index) => starTrailsModelBases[index] || `star-t
                       ) : (
                         <p>Archival pigment print on cotton rag.</p>
                       )}
-                      {isStarTrails && (
+                      {hasModelViewer(i) && (
                         <model-viewer
                           class="model-viewer-frame mobile-only"
-                          src={`/models/${getStarTrailsModelBase(i)}.glb?v=6`}
-                          ios-src={`/models/${getStarTrailsModelBase(i)}.usdz?v=6`}
+                          src={`/models/${getModelBase(i)}.glb?v=6`}
+                          ios-src={`/models/${getModelBase(i)}.usdz?v=6`}
                           ar
                           ar-modes="webxr scene-viewer quick-look"
                           camera-controls
@@ -142,11 +158,11 @@ const getStarTrailsModelBase = (index) => starTrailsModelBases[index] || `star-t
                       ) : (
                         <p>Archival pigment print on cotton rag.</p>
                       )}
-                      {isStarTrails && (
+                      {hasModelViewer(i) && (
                         <model-viewer
                           class="model-viewer-frame mobile-only"
-                          src={`/models/${getStarTrailsModelBase(i)}.glb?v=6`}
-                          ios-src={`/models/${getStarTrailsModelBase(i)}.usdz?v=6`}
+                          src={`/models/${getModelBase(i)}.glb?v=6`}
+                          ios-src={`/models/${getModelBase(i)}.usdz?v=6`}
                           ar
                           ar-modes="webxr scene-viewer quick-look"
                           camera-controls

@@ -254,7 +254,7 @@ export const projects: Project[] = [
       '/images/Orion.jpg',
       '/images/Horsehead and flame nebulas.png',
       '/images/California nebula.jpg',
-      '/images/California nebula (1).jpg'
+      '/images/Veil.jpg'
     ],
     imageTitles: [
         'Whirlpool',
