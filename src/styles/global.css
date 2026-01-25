@@ -50,9 +50,9 @@ model-viewer.model-viewer-frame {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Hide model-viewer on desktop (md and up) */
-@media (min-width: 768px) {
-  model-viewer.model-viewer-frame[class*="md:hidden"] {
+/* Hide model-viewer on desktop (devices with hover capability) */
+@media (hover: hover) and (pointer: fine) {
+  model-viewer.model-viewer-frame.mobile-only {
     display: none !important;
   }
 }
