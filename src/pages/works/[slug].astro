@@ -41,10 +41,9 @@ const isNowAndThen = project.slug === 'now-and-then';
 const nowAndThenModelBases = ['whirlpool', 'andromeda', 'eagle', 'orion', 'horsehead', 'california', 'veil-nebula'];
 const getNowAndThenModelBase = (index) => nowAndThenModelBases[index] || `now-and-then-${index + 1}`;
 
-// For testing: only show Whirlpool (index 0) for Now & Then
 const hasModelViewer = (index) => {
   if (isStarTrails) return true;
-  if (isNowAndThen) return index === 0; // Only show for first image (Whirlpool) during testing
+  if (isNowAndThen) return true; // Show for all images in Now & Then series
   return false;
 };
 const getModelBase = (index) => {
