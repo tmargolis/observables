@@ -38,7 +38,7 @@ const starTrailsModelBases = ['geminid', 'dunes', 'goose-lake', 'wildcat'];
 const getStarTrailsModelBase = (index) => starTrailsModelBases[index] || `star-trails-${index + 1}`;
 
 const isNowAndThen = project.slug === 'now-and-then';
-const nowAndThenModelBases = ['whirlpool', 'andromeda2', 'eagle', 'orion', 'horsehead', 'california', 'veil-nebula'];
+const nowAndThenModelBases = ['whirlpool', 'andromeda', 'eagle', 'orion', 'horsehead', 'california', 'veil'];
 const getNowAndThenModelBase = (index) => nowAndThenModelBases[index] || `now-and-then-${index + 1}`;
 
 const hasModelViewer = (index) => {
@@ -129,7 +129,7 @@ const getModelBase = (index) => {
                           ar-modes="webxr scene-viewer quick-look"
                           camera-controls
                           alt="A 3D model of my artwork">
-                          <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+                          <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; bottom: 10px; right: 10px; ">
                             View in your space
                           </button>
                         </model-viewer>
