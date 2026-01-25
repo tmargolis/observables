@@ -45,10 +45,16 @@
 model-viewer.model-viewer-frame {
   width: 100%;
   aspect-ratio: 4 / 3;
-  display: block;
   position: relative;
   background: #0b0b0b;
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Hide model-viewer on desktop (md and up) */
+@media (min-width: 768px) {
+  model-viewer.model-viewer-frame[class*="md:hidden"] {
+    display: none !important;
+  }
 }
 
 /* Base Styles */
