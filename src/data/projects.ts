@@ -151,18 +151,18 @@ export const projects: Project[] = [
     price: '$1,000.00',
     note: 'n/a',
     isSeries: true,
-    heroImage: '/images/View-MasterReelSm.png',
+    heroImage: '/images/Horizons-cover.jpg',
     quote: 'Stereoscopic depth in the void.',
     description: 'The iconic View-Master, a symbol of childhood wonder, is reimagined by artist Todd Margolis as a complex portal to the cosmos. This custom experience presents seven stereoscopic images of our solar system, crafted initially not from illustration, but from authentic scientific data. By meticulously utilizing parallax data and rotational shifts captured by spacecraft, Margolis transforms raw information from missions like New Horizons and Mars Express into true 3D views of celestial objects.',
     description2: 'Yet, these pristine scientific vistas are not left uninhabited. In a provocative artistic intervention, Margolis disrupts the purity of the data by embedding contemporary avatars of extra-planetary ambition within the scenes. With the simple, mechanical click of the viewer’s lever, one might encounter the icy mountains of Pluto, only to find them scaled by a diminutive Jeff Bezos; turn the wheel again, and Elon Musk is revealed surveying the dust-strewn craters of Mars\'s moon Phobos.\n\nThe result is an intimate, personal encounter with the sublime, complicated by the uncanny presence of human ego. The artwork collapses the immense distances of space, placing both the grandeur of cosmic phenomena—like the explosive energy of a Solar Coronal Mass Ejection—and the caricatures of modern corporate spacefarers directly into your hands. It transforms abstract data into a visceral experience, inviting a private communion with sights otherwise inaccessible to humankind, while simultaneously questioning who gets to claim dominion over them.',
     images: [
       '/images/Pluto-Previs_1.jpg',
-      '/images/plutoScene-anaglyph.png',
-      '/images/Phobos-CyberTruck.png',
-      '/images/sun-anaglyph.png',
-      '/images/Asteroids.jpeg',
-      '/images/Proxima_Previs1.jpeg',
-      '/images/Horizons-moon.jpg'
+      '/images/pluto-cross.jpg',
+      '/images/phobos-cross.jpg',
+      '/images/sun-cross.jpg',
+      '/images/asteroid-cross.jpg',
+      '/images/ProximaAvi-cross.jpg',
+      '/images/moon-cross.jpg'
     ],
     imageTitles: [
         'Pluto (Detail)',
@@ -183,7 +183,7 @@ export const projects: Project[] = [
         'Lunar view featuring Michelle Hanlon as a security guard protecting Apollo 11 behind a velvet rope.'
     ],
     description3: 'This piece is not a nostalgic novelty; it is the culmination of a career dedicated to the intersection of art, technology, and perception. For decades, Margolis has been a pioneer in immersive media, from his early co-invention of the Varrier™ auto-stereoscopic display to his creation of 3D artwork using PHSCologram technology. This View-Master project is a direct extension of that lifelong inquiry, refining large-scale concepts into a profoundly personal form.\n\nDuring his tenure at the Qualcomm Institute at UCSD, Margolis designed "discovery platforms" to translate vast scientific datasets into immersive, understandable experiences. This practice of turning complex information into compelling visual encounters is central to his work. The View-Master, then, becomes the perfect synthesis of his artistic and technological concerns: using a historical medium of mass visual consumption to frame cutting-edge scientific discovery and contemporary cultural mythology. In doing so, he forges a tangible, and critical, connection between human curiosity, commercial ambition, and the farthest reaches of our universe.',
-    watermarkedImages: ['/images/View-MasterReelSm.png', '/images/Pluto-Previs_1.jpg','/images/Asteroids.jpeg', '/images/Proxima_Previs1.jpeg', '/images/Horizons-moon.jpg']
+    watermarkedImages: ['/images/View-MasterReelSm.png', '/images/Pluto-Previs_1.jpg','/images/asteroid-anaglyph.png', '/images/ProximaAvi.png', '/images/Horizons-moon.jpg']
   },
   // 6. Metronome
   {
