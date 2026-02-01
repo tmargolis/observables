@@ -22,7 +22,7 @@ export interface Project {
   contextCaption?: string;
   watermarkedImages?: string[]; // Array of image paths that should show watermark
 }
-
+ 
 export const projects: Project[] = [
   // 1. Bang
   {
