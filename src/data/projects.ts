@@ -235,7 +235,6 @@ export const projects: Project[] = [
   {
     slug: 'now-and-then',
     title: 'Now & Then',
-    status: 'Work in Progress',
     year: '2021-2026',
     medium: 'Archival Prints',
     dimensions: '20 x 30 inches each',
