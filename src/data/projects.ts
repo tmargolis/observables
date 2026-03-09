@@ -282,7 +282,7 @@ export const projects: Project[] = [
     title: 'Neighbors',
     status: 'Awaiting Fabrication',
     year: '2026',
-    medium: 'Cast Material',
+    medium: 'Ceramics and Glass',
     dimensions: 'Variable',
     weight: 'Variable',
     note: 'Delicate packing',
@@ -314,7 +314,7 @@ export const projects: Project[] = [
         'Sculptural interpretation of solar flares and surface activity, solidified in cast material.',
         'Physical visualization of an event horizon, giving form to the invisible pull of a black hole.'
     ],
-    watermarkedImages: ['/images/Spheroids-Previs1.png', '/images/Flats-Previs_1.png', '/images/Mars-Previs_1..png', '/images/MilkyWay-Previs_1.png', '/images/Moon-Previs_1.png', '/images/Sun-Previs_1.png', '/images/BlackHole-Previs_1.png']
+    watermarkedImages: ['/images/Spheroids-Previs1.png', '/images/Flats-Previs_1.png', '/images/Mars-Previs_1..png', '/images/MilkyWay-Previs_1.png', '/images/Moon-Previs_1.png', '/images/Sun-Previs_1.png', '/images/black-hole-glass.png']
   },
   // 10. CMB VR
   {
