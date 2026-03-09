@@ -248,13 +248,16 @@ export const projects: Project[] = [
     description: 'In the Now & Then series, I explore the profound reality that astronomy is, at its core, the study of the past. Every photon captured by my lens carries a "history of travel," revealing not where a star is today, but where it was when its light began its journey across the void. To bridge the gap between human history and cosmic time, I use AI to generate contextual scenes of the specific historical era on Earth when that light first departed.',
     description2: 'By inserting the astronomical subject into these reconstructed landscapes and applying textures like fossilized rock, flaking parchment, or ancient stone etchings, I aim to materialize the "latency" of the universe, making the deep time of the cosmos tangible through the lens of human heritage.',
     images: [
-      '/images/whirlpoo-ape-comp.1 Large.jpeg',
-      '/images/Andromeda-comp.2 Large.jpeg',
-      '/images/Eagle-comp2 Large.jpeg',
-      '/images/Orion-mayam-comp.2 Large.jpeg',
-      '/images/Horsehead-combo-comp.2 Large.jpeg',
-      '/images/California-islam-comp1 Large.jpeg',
-      '/images/Veil-bhuda-comp.1 Large.jpeg'
+      '/images/whirlpoo-ape-comp.1-Large.jpeg',
+      '/images/Andromeda-comp.2-Large.jpeg',
+      '/images/Eagle-comp2-Large.jpeg',
+      '/images/Orion-mayan-comp.2-Large.jpeg',
+      '/images/Horsehead-combo.3-Large.jpeg',
+      '/images/California-islam-comp1-Large.jpeg',
+      '/images/Veil-bhuda-comp.1-Large.jpeg',
+      '/images/Saturn-video-still2.png',
+      '/images/Sun-video-still.png',
+      '/images/Moon-video-still.png'
       ],
     imageTitles: [
         'Whirlpool',
@@ -263,7 +266,10 @@ export const projects: Project[] = [
         'Orion',
         'Horsehead',
         'California',
-        'Veil Nebula'
+        'Veil Nebula',
+        'Saturn',
+        'Sun',
+        'Moon'
     ],
     imageDescriptions: [
         'Fossilised into the appearance of ancient rock, this image captures the galaxy as it looked 23 million years ago when the continents were only just settling into their modern positions.',
@@ -273,8 +279,7 @@ export const projects: Project[] = [
         'Created with the aesthetic of a Migration Period tapestry, this silhouette shows the nebula as it existed 1,375 years ago while Germanic tribes reshaped Europe and the Gupta Empire thrived in India.',
         'Styled as a medieval illuminated manuscript, this image captures the nebula as it was 1,000 years ago, a moment when the Golden Age of Islam flourished.',
         'Presented as a weathered Roman fresco, this work depicts the nebula as it appeared 2,400 years ago during the rise of the Roman Republic and the life of Siddhartha Gautama in India.'
-    ],
-    watermarkedImages: ['/images/Andromeda.jpg', '/images/Eagle v2.jpg', '/images/Orion.jpg', '/images/Horsehead and flame nebulas.png', '/images/California nebula.jpg', '/images/California nebula (1).jpg']
+    ]
   },
   // 9. Sculpture
   {
