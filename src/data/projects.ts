@@ -248,14 +248,14 @@ export const projects: Project[] = [
     description: 'In the Now & Then series, I explore the profound reality that astronomy is, at its core, the study of the past. Every photon captured by my lens carries a "history of travel," revealing not where a star is today, but where it was when its light began its journey across the void. To bridge the gap between human history and cosmic time, I use AI to generate contextual scenes of the specific historical era on Earth when that light first departed.',
     description2: 'By inserting the astronomical subject into these reconstructed landscapes and applying textures like fossilized rock, flaking parchment, or ancient stone etchings, I aim to materialize the "latency" of the universe, making the deep time of the cosmos tangible through the lens of human heritage.',
     images: [
-      '/images/1-Whirlpool.png',
-      '/images/Andromeda.jpg',
-      '/images/Eagle v2.jpg',
-      '/images/Orion.jpg',
-      '/images/Horsehead and flame nebulas.png',
-      '/images/California nebula.jpg',
-      '/images/Veil.jpg'
-    ],
+      '/images/whirlpoo-ape-comp.1 Large.jpeg',
+      '/images/Andromeda-comp.2 Large.jpeg',
+      '/images/Eagle-comp2 Large.jpeg',
+      '/images/Orion-mayam-comp.2 Large.jpeg',
+      '/images/Horsehead-combo-comp.2 Large.jpeg',
+      '/images/California-islam-comp1 Large.jpeg',
+      '/images/Veil-bhuda-comp.1 Large.jpeg'
+      ],
     imageTitles: [
         'Whirlpool',
         'Andromeda',
@@ -298,7 +298,7 @@ export const projects: Project[] = [
       '/images/MilkyWay-Previs_1.png',
       '/images/Moon-Previs_1.png',
       '/images/Sun-Previs_1.png',
-      '/images/BlackHole-Previs_1.png'
+      '/images/black-hole-glass.png'
     ],
     imageTitles: [
         'Mars',
