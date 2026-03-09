@@ -252,7 +252,7 @@ export const projects: Project[] = [
       '/images/Eagle-comp2-Large.jpeg',
       '/images/Orion-mayan-comp.2-Large.jpeg',
       '/images/Horsehead-combo.3-Large.jpeg',
-      '/images/California-islam-comp1-Large.jpeg',
+      '/images/california-islam-comp1-Large.jpeg',
       '/images/Veil-bhuda-comp.1-Large.jpeg',
       '/images/Saturn-video-still2.png',
       '/images/Sun-video-still.png',
