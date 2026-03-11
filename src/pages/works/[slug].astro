@@ -41,6 +41,8 @@ const isNowAndThen = project.slug === 'now-and-then';
 const nowAndThenModelBases = ['whirlpool', 'andromeda', 'eagle', 'orion', 'horsehead', 'california', 'veil'];
 const getNowAndThenModelBase = (index) => nowAndThenModelBases[index] || `now-and-then-${index + 1}`;
 
+const isMetronome = project.slug === 'metronome';
+
 const hasModelViewer = (index) => {
   if (isStarTrails) return true;
   if (isNowAndThen) return true; // Show for all images in Now & Then series
@@ -74,6 +76,17 @@ const getModelBase = (index) => {
       <p class="font-serif text-xl md:text-2xl text-gray-300 italic max-w-2xl">"{project.quote}"</p>
     </div>
   </header>
+
+  {isMetronome && (
+    <div class="w-full bg-black/80 border-t border-b border-white/10 flex justify-center py-6">
+      <button
+        class="inline-flex items-center gap-2 border border-white/40 bg-white/90 text-black font-mono text-xs px-6 py-3 uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-colors"
+        onclick="window.playMetronome && window.playMetronome()"
+      >
+        ▶ Play Audio
+      </button>
+    </div>
+  )}
 
   <!-- Content Grid -->
   <div class="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 grid grid-cols-1 md:grid-cols-12 gap-12 relative">
@@ -196,7 +209,7 @@ const getModelBase = (index) => {
         /* Standard Single Work Layout */
         <>
           {/* Show video if it exists, otherwise conditionally show carousel */}
-          {(project.videos && project.videos.length > 0) || !['black-hole-vision', 'the-edge', '3d-horizons','cmb-vr','redshifter', 'audio-counter'].includes(project.slug) ? (
+          {(project.videos && project.videos.length > 0) || !['black-hole-vision', 'the-edge', '3d-horizons','cmb-vr','redshifter', 'metronome'].includes(project.slug) ? (
             <div class="relative w-full aspect-video bg-gray-900 overflow-x-auto snap-x snap-mandatory flex hide-scrollbar items-center justify-center">
                {/* Check if Video Exists for Main Display */}
                {project.videos && project.videos.length > 0 ? (
@@ -389,7 +402,26 @@ const getModelBase = (index) => {
 
 </Layout>
 
-  <script define:vars={{ allImages: project.isSeries ? seriesImages : carouselImages, watermarkedImages: project.watermarkedImages || [], prevUrl: `/works/${prevProject.slug}/`, nextUrl: `/works/${nextProject.slug}/` }}>
+  <script define:vars={{ allImages: project.isSeries ? seriesImages : carouselImages, watermarkedImages: project.watermarkedImages || [], prevUrl: `/works/${prevProject.slug}/`, nextUrl: `/works/${nextProject.slug}/`, isMetronome, metronomeAudioSrc: project.audio || '/audio/metronome_test.1.mp3' }}>
+    // Metronome audio autoplay + manual control
+    if (isMetronome && metronomeAudioSrc) {
+      const metronomeAudio = new Audio(metronomeAudioSrc);
+      metronomeAudio.loop = true;
+
+      window.playMetronome = async function () {
+        try {
+          await metronomeAudio.play();
+        } catch (e) {
+          console.warn('Metronome audio play was blocked or failed.', e);
+        }
+      };
+
+      // Best-effort autoplay on load; some browsers may block, the button will still work.
+      window.addEventListener('load', () => {
+        window.playMetronome();
+      });
+    }
+
     // Collect all clickable images from the page
     const images = allImages;
     let currentImageIndex = 0;

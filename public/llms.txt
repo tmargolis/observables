@@ -12,7 +12,7 @@
 - [Delayed Vision](https://observables.art/works/delayed-vision/) - Video mirror series introducing delays corresponding to light-travel time from celestial bodies (Moon, Sun, Saturn)
 - [Star Trails](https://observables.art/works/star-trails/) - Photographic series capturing star motion as Earth rotates (Geminid, Dunes, Goose Lake, Wildcat)
 - [3D Horizons](https://observables.art/works/3d-horizons/) - Stereoscopic View-Master experience with 7 images of the solar system
-- [Audio Counter](https://observables.art/works/audio-counter/) - Generative audio piece sonifying the observable universe's star counts
+- [Metronome](https://observables.art/works/metronome/) - Generative audio piece sonifying the observable universe's star counts
 - [The Edge](https://observables.art/works/the-edge/) - Laminar flow fog screen installation representing the edge of the observable universe
 - [Now & Then](https://observables.art/works/now-and-then/) - Photo series combining modern astrophotography with historical imagery (Whirlpool, Andromeda, Eagle, Orion, Horsehead, California)
 - [Sculpture Series](https://observables.art/works/sculpture/) - Cast material reliefs from topographic data of cosmic objects (Mars, Milky Way, Moon, Sun, Black Hole)

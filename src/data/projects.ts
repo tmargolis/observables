@@ -15,6 +15,7 @@ export interface Project {
   description3?: string;
   images: string[];
   videos?: string[];
+  audio?: string;
   isSeries?: boolean;
   imageTitles?: string[];
   imageDescriptions?: string[]; // New field for specific descriptions per image
@@ -187,9 +188,9 @@ export const projects: Project[] = [
   },
   // 6. Metronome
   {
-    slug: 'audio-counter',
+    slug: 'metronome',
     title: 'Metronome',
-    status: 'Awaiting Fabrication',
+    status: 'In Progress',
     year: '2026',
     medium: 'Generative Audio',
     dimensions: 'Variable',
@@ -204,7 +205,8 @@ export const projects: Project[] = [
       '/images/gravitationWave.jpg',
       '/images/gsmf.gif'
     ],
-    watermarkedImages: ['/images/Audio_Stats.png', '/images/gsmf.gif']
+    watermarkedImages: ['/images/Audio_Stats.png', '/images/gsmf.gif'],
+    audio: '/audio/metronome_test.1.mp3'
   },
   // 7. The Edge
   {
