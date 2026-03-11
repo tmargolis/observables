@@ -80,6 +80,7 @@ const getModelBase = (index) => {
   {isMetronome && (
     <div class="w-full bg-black/80 border-t border-b border-white/10 flex justify-center py-6">
       <button
+        id="metronome-toggle"
         class="inline-flex items-center gap-2 border border-white/40 bg-white/90 text-black font-mono text-xs px-6 py-3 uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-colors"
         onclick="window.playMetronome && window.playMetronome()"
       >
@@ -408,9 +409,24 @@ const getModelBase = (index) => {
       const metronomeAudio = new Audio(metronomeAudioSrc);
       metronomeAudio.loop = true;
 
+      let isMetronomePlaying = false;
+
+      function updateMetronomeButton() {
+        const btn = document.getElementById('metronome-toggle');
+        if (!btn) return;
+        btn.textContent = isMetronomePlaying ? '■ Stop Audio' : '▶ Play Audio';
+      }
+
       window.playMetronome = async function () {
         try {
-          await metronomeAudio.play();
+          if (metronomeAudio.paused) {
+            await metronomeAudio.play();
+            isMetronomePlaying = true;
+          } else {
+            metronomeAudio.pause();
+            isMetronomePlaying = false;
+          }
+          updateMetronomeButton();
         } catch (e) {
           console.warn('Metronome audio play was blocked or failed.', e);
         }
@@ -420,6 +436,19 @@ const getModelBase = (index) => {
       window.addEventListener('load', () => {
         window.playMetronome();
       });
+
+      // Sync UI if user pauses/plays via browser controls (if any are added later)
+      metronomeAudio.addEventListener('play', () => {
+        isMetronomePlaying = true;
+        updateMetronomeButton();
+      });
+      metronomeAudio.addEventListener('pause', () => {
+        isMetronomePlaying = false;
+        updateMetronomeButton();
+      });
+
+      // Initialize label
+      updateMetronomeButton();
     }
 
     // Collect all clickable images from the page
