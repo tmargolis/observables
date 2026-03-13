@@ -17,6 +17,7 @@
     "yargs-parser": "^22.0.0"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^3.7.1",
     "@types/node": "^20.0.0",
     "@types/pdfkit": "^0.13.4",
     "tsx": "^4.7.0"
