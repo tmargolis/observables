@@ -157,7 +157,7 @@ export const projects: Project[] = [
     description: 'The iconic View-Master, a symbol of childhood wonder, is reimagined by artist Todd Margolis as a complex portal to the cosmos. This custom experience presents seven stereoscopic images of our solar system, crafted initially not from illustration, but from authentic scientific data. By meticulously utilizing parallax data and rotational shifts captured by spacecraft, Margolis transforms raw information from missions like New Horizons and Mars Express into true 3D views of celestial objects.',
     description2: 'Yet, these pristine scientific vistas are not left uninhabited. In a provocative artistic intervention, Margolis disrupts the purity of the data by embedding contemporary avatars of extra-planetary ambition within the scenes. With the simple, mechanical click of the viewer’s lever, one might encounter the icy mountains of Pluto, only to find them scaled by a diminutive Jeff Bezos; turn the wheel again, and Elon Musk is revealed surveying the dust-strewn craters of Mars\'s moon Phobos.\n\nThe result is an intimate, personal encounter with the sublime, complicated by the uncanny presence of human ego. The artwork collapses the immense distances of space, placing both the grandeur of cosmic phenomena—like the explosive energy of a Solar Coronal Mass Ejection—and the caricatures of modern corporate spacefarers directly into your hands. It transforms abstract data into a visceral experience, inviting a private communion with sights otherwise inaccessible to humankind, while simultaneously questioning who gets to claim dominion over them.',
     images: [
-      '/images/Pluto-Previs_1.jpg',
+      '/images/pluto_amazon-cross.jpg',
       '/images/pluto-cross.jpg',
       '/images/phobos-cross.jpg',
       '/images/sun-cross.jpg',
@@ -166,7 +166,7 @@ export const projects: Project[] = [
       '/images/moon-cross.jpg'
     ],
     imageTitles: [
-        'Pluto (Detail)',
+        'Pluto (Amazon)',
         'Pluto',
         'Martian Moon Phobos',
         'The Sun',
@@ -175,7 +175,7 @@ export const projects: Project[] = [
         'The Moon'
     ],
     imageDescriptions: [
-        '3D detail of nitrogen plains on Pluto featuring Jeff Bezos overseeing an Amazon-style automated mining plant.',
+        '3D detail of nitrogen plains on Pluto featuring Jeff Bezos overseeing an Amazon automated mining plant.',
         'Plutonian mountains where Neil deGrasse Tyson definitively red-markers a \'Planet\' sign out of existence.',
         'Irregular Martian moon where Elon Musk plants his flag from a Cybertruck rover.',
         'Capture of solar coronal ejections framing a giant, gold-lettered Trump billboard hovering in the plasma.',
